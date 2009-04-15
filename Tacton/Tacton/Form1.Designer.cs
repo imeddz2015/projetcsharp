@@ -52,9 +52,10 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(917, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(917, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // fichierToolStripMenuItem
             // 
@@ -63,24 +64,24 @@
             this.toolStripSeparator2,
             this.exitToolStripMenuItem});
             this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
-            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(60, 23);
+            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.fichierToolStripMenuItem.Text = "Fichier";
             // 
             // nouveauTactonToolStripMenuItem
             // 
             this.nouveauTactonToolStripMenuItem.Name = "nouveauTactonToolStripMenuItem";
-            this.nouveauTactonToolStripMenuItem.Size = new System.Drawing.Size(178, 24);
+            this.nouveauTactonToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.nouveauTactonToolStripMenuItem.Text = "Nouveau Tacton";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(175, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(161, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(178, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // editionToolStripMenuItem
@@ -89,19 +90,19 @@
             this.ajouterTactonToolStripMenuItem,
             this.supprimerTactonToolStripMenuItem});
             this.editionToolStripMenuItem.Name = "editionToolStripMenuItem";
-            this.editionToolStripMenuItem.Size = new System.Drawing.Size(63, 23);
+            this.editionToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.editionToolStripMenuItem.Text = "Edition";
             // 
             // ajouterTactonToolStripMenuItem
             // 
             this.ajouterTactonToolStripMenuItem.Name = "ajouterTactonToolStripMenuItem";
-            this.ajouterTactonToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
+            this.ajouterTactonToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.ajouterTactonToolStripMenuItem.Text = "Ajouter Tacton";
             // 
             // supprimerTactonToolStripMenuItem
             // 
             this.supprimerTactonToolStripMenuItem.Name = "supprimerTactonToolStripMenuItem";
-            this.supprimerTactonToolStripMenuItem.Size = new System.Drawing.Size(186, 24);
+            this.supprimerTactonToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.supprimerTactonToolStripMenuItem.Text = "Supprimer Tacton";
             // 
             // toolStripMenuItem1
@@ -111,24 +112,24 @@
             this.toolStripSeparator1,
             this.aProposToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(27, 23);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(24, 20);
             this.toolStripMenuItem1.Text = "?";
             // 
             // aideToolStripMenuItem
             // 
             this.aideToolStripMenuItem.Name = "aideToolStripMenuItem";
-            this.aideToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.aideToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.aideToolStripMenuItem.Text = "Aide";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(131, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(125, 6);
             // 
             // aProposToolStripMenuItem
             // 
             this.aProposToolStripMenuItem.Name = "aProposToolStripMenuItem";
-            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.aProposToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.aProposToolStripMenuItem.Text = "A propos";
             // 
             // tableLayoutPanel1
@@ -147,7 +148,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(176, 168);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(90, 81);
             this.tableLayoutPanel1.TabIndex = 1;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
