@@ -22,10 +22,17 @@ namespace Tacton
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-            Panel pan = new Panel();
+            //Panel pan = new Panel();
+            Form tact = new Form();
             Graphics g = this.CreateGraphics();
-            pan.CreateGraphics();
+            //pan.CreateGraphics();
             g.FillEllipse(Brushes.MediumSlateBlue, 5, 10, 70, 70);
+          
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
 
     }
