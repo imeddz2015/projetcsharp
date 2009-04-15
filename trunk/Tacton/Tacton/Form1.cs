@@ -14,5 +14,19 @@ namespace Tacton
         {
             InitializeComponent();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+            Panel pan = new Panel();
+            Graphics g = this.CreateGraphics();
+            pan.CreateGraphics();
+            g.FillEllipse(Brushes.MediumSlateBlue, 5, 10, 70, 70);
+        }
+
     }
 }
