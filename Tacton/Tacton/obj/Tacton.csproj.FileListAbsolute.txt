@@ -1,11 +1,3 @@
-D:\Projet c#\Tacton\Tacton\bin\Debug\Tacton.exe
-D:\Projet c#\Tacton\Tacton\bin\Debug\Tacton.pdb
-D:\Projet c#\Tacton\Tacton\obj\Debug\ResolveAssemblyReference.cache
-D:\Projet c#\Tacton\Tacton\obj\Debug\Tacton.Form1.resources
-D:\Projet c#\Tacton\Tacton\obj\Debug\Tacton.Properties.Resources.resources
-D:\Projet c#\Tacton\Tacton\obj\Debug\Tacton.csproj.GenerateResource.Cache
-D:\Projet c#\Tacton\Tacton\obj\Debug\Tacton.exe
-D:\Projet c#\Tacton\Tacton\obj\Debug\Tacton.pdb
 G:\Projet C#\Tacton\Tacton\obj\Debug\Tacton.exe
 G:\Projet C#\Tacton\Tacton\obj\Debug\Tacton.pdb
 G:\Projet C#\Tacton\Tacton\bin\Debug\Tacton.exe
@@ -14,3 +6,11 @@ G:\Projet C#\Tacton\Tacton\obj\Debug\ResolveAssemblyReference.cache
 G:\Projet C#\Tacton\Tacton\obj\Debug\Tacton.Form1.resources
 G:\Projet C#\Tacton\Tacton\obj\Debug\Tacton.Properties.Resources.resources
 G:\Projet C#\Tacton\Tacton\obj\Debug\Tacton.csproj.GenerateResource.Cache
+D:\Projet c#\Tacton\Tacton\bin\Debug\Tacton.exe
+D:\Projet c#\Tacton\Tacton\bin\Debug\Tacton.pdb
+D:\Projet c#\Tacton\Tacton\obj\Debug\ResolveAssemblyReference.cache
+D:\Projet c#\Tacton\Tacton\obj\Debug\Tacton.Form1.resources
+D:\Projet c#\Tacton\Tacton\obj\Debug\Tacton.Properties.Resources.resources
+D:\Projet c#\Tacton\Tacton\obj\Debug\Tacton.csproj.GenerateResource.Cache
+D:\Projet c#\Tacton\Tacton\obj\Debug\Tacton.exe
+D:\Projet c#\Tacton\Tacton\obj\Debug\Tacton.pdb
