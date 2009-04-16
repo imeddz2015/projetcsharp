@@ -25,13 +25,16 @@ namespace Tacton
             //Panel pan = new Panel();
             Graphics g = tableLayoutPanel1.CreateGraphics();
             //pan.CreateGraphics();
-            
-            g.FillEllipse(Brushes.MediumSlateBlue, 6, 6, 20, 20);
+            paintCircle(6, 6, g);
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+        private void paintCircle(int x, int y, Graphics gr)
+        {
+            gr.FillEllipse(Brushes.MediumSlateBlue, x, y, 20, 20);
         }
 
     }
