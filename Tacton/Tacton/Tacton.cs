@@ -34,8 +34,8 @@ namespace Tacton
 
         public void setOn(int pos)
         {
-            int x = pos / this.x;
-            int y = pos % this.x;
+            int y = pos / this.x;
+            int x = pos % this.x;
             this.setOn(x, y);
         }
         public void setOn(int x, int y)
@@ -47,6 +47,32 @@ namespace Tacton
             }
             else Console.WriteLine("hors limite");
 
+        }
+        public void setOff(int pos)
+        {
+            int y = pos / this.x;
+            int x = pos % this.x;
+            this.setOff(x, y);
+        }
+        public void setOff(int x, int y)
+        {
+            if (x < this.x && y < this.y)
+            {
+                Rectangle r = new Rectangle(posx + (x * tsize) + marge + (marge * x), (marge * y) + posy + (y * tsize) + marge, tsize, tsize);//, posx + (i * tsize) + tsize, posy + (j * tsize) + tsize);
+                this.getGraphics().FillEllipse(this.tacton_off, r);
+            }
+            else Console.WriteLine("hors limite");
+
+        }
+        public Point getCoordonnee(int sx, int sy)
+        { //debugging
+            Point p=new Point();
+            p.X = Convert.ToInt32(Math.Round((1.0 * sx / (posx+x * tsize + marge * x + marge)) * this.x));
+            p.Y = Convert.ToInt32(Math.Round((1.0 * sy / (posy+y * tsize + marge * y + marge)) * this.y));
+            //Console.WriteLine((1.0*sx / (this.x * this.tsize)).ToString() + " , " + (1.0*sy / (this.y*this.tsize)).ToString());
+            //Console.WriteLine(sx.ToString()+", "+ sy.ToString());
+            Console.WriteLine(((posx + x * tsize + marge * x + marge)).ToString() + ", " + ((posy + y * tsize + marge * y + marge)).ToString());
+            return p;
         }
         private void buildTactons(Panel p, int x, int y, int tsize, int posx, int posy)
         {
@@ -69,10 +95,10 @@ namespace Tacton
             for (i = 0; i < x; i++)
                 for (j = 0; j < y; j++)
                 {
-                    Rectangle r = new Rectangle(posx + (i * tsize) + marge + (marge * i), (marge * j) + posy + (j * tsize) + marge, tsize, tsize);//, posx + (i * tsize) + tsize, posy + (j * tsize) + tsize);
+                    //Rectangle r = new Rectangle(posx + (i * tsize) + marge + (marge * i), (marge * j) + posy + (j * tsize) + marge, tsize, tsize);//, posx + (i * tsize) + tsize, posy + (j * tsize) + tsize);
                     //Console.WriteLine(r.ToString());
-                    g.FillEllipse(this.tacton_off, r);
-
+                    //g.FillEllipse(this.tacton_off, r);
+                    this.setOff(i, j);
                 }
         }
 
