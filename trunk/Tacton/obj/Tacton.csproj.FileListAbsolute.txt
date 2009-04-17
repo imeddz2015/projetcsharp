@@ -22,3 +22,5 @@ C:\Documents and Settings\Myster coco\Mes documents\projet\Tacton\Tacton\obj\Deb
 C:\Documents and Settings\Myster coco\Mes documents\projet\Tacton\Tacton\obj\Debug\Tacton.Form1.resources
 C:\Documents and Settings\Myster coco\Mes documents\projet\Tacton\Tacton\obj\Debug\Tacton.Properties.Resources.resources
 C:\Documents and Settings\Myster coco\Mes documents\projet\Tacton\Tacton\obj\Debug\Tacton.csproj.GenerateResource.Cache
+D:\Projet c#\Tacton\obj\Debug\Tacton.exe
+D:\Projet c#\Tacton\obj\Debug\Tacton.pdb
