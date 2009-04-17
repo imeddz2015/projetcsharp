@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TactonStatique auteur="Pecci" date =" 2009-02-26" nblignes="4" nbcolonnes="4">
+  <Commentaire>
+    Ceci est un exemple de tacton statique qui représente un carré
+  </Commentaire>
+  <Motif>
+    <Ligne numero="1">
+      <Colonne numero="1">1</Colonne>
+      <Colonne numero="2">1</Colonne>
+      <Colonne numero="3">1</Colonne>
+      <Colonne numero="4">1</Colonne>
+    </Ligne>
+    <Ligne numero="2">
+      <Colonne numero="1">1</Colonne>
+      <Colonne numero="2">0</Colonne>
+      <Colonne numero="3">0</Colonne>
+      <Colonne numero="4">1</Colonne>
+    </Ligne>
+    <Ligne numero="3">
+      <Colonne numero="1">1</Colonne>
+      <Colonne numero="2">0</Colonne>
+      <Colonne numero="3">0</Colonne>
+      <Colonne numero="4">1</Colonne>
+    </Ligne>
+    <Ligne numero="4">
+      <Colonne numero="1">1</Colonne>
+      <Colonne numero="2">1</Colonne>
+      <Colonne numero="3">1</Colonne>
+      <Colonne numero="4">1</Colonne>
+    </Ligne>
+  </Motif>
+</TactonStatique>
+
