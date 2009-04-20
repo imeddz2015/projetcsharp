@@ -21,6 +21,25 @@ namespace Tacton
         public Brush deftacton_on = Brushes.BlueViolet;
 
         public bool clicked;
+        
+
+        public void MajStatus(object sender, MonEventArgs arg)
+        {
+        }
+
+  
+
+ 
+
+ 
+
+
+        
+
+
+
+        //OK OK
+
         public Form1()
         {
             ens = new EnsembleTactons();
@@ -29,41 +48,19 @@ namespace Tacton
             lr += new LRMouseDownEventHandler(MajStatus);
         }
 
-        public void MajStatus(object sender, MonEventArgs arg)
-        {
-        }
-
-  
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Environment.Exit(-1);
         }
- 
 
- 
-    
-
-
-        private void button1_Click(object sender, EventArgs e)
+        private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            //t.repaint();.
-            ens.repaint();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Tactons t = new Tactons(this, 4, 4, 20, 100, 50);
-           ens.ajouter(t);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            //t.deplace(200, 100);
+            this.ens.repaint();
         }
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
-            Tactons t=this.ens.getByMouse(e.X, e.Y);
+            Tactons t = this.ens.getByMouse(e.X, e.Y);
             //MessageBox.Show(e.X.ToString() + ", " + e.Y.ToString());
             if (t != null)
             {
@@ -74,56 +71,6 @@ namespace Tacton
                 else
                     t.setOn(p);
             }
-        }
-
-        private void Form1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            Tactons t = this.ens.getByMouse(e.X, e.Y);
-            if (t != null)
-            {
-                this.ens.effacer(t);
-                this.ens.replacer();
-            }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.ens.replacer();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            
-            /**/
-            openFileDialog1.ShowDialog();
-            this.ens.chargerDynamiqueDepuisFichier(openFileDialog1.FileName, this);
-            
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            
-            saveFileDialog1.ShowDialog();
-            /*
-            Tactons t = ens.items[0];
-            t.sauverMatriceDansUnFichier(saveFileDialog1.FileName);
-             */
-            ens.sauveDynamiqueDansFichier(saveFileDialog1.FileName);
-        }
-
-        
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            this.ens.vider();
-        }
-
-
-        //OK OK
-
-        private void Form1_Paint(object sender, PaintEventArgs e)
-        {
-            this.ens.repaint();
         }
 
         private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -176,14 +123,89 @@ namespace Tacton
            ens.ajouter(t);
         }
 
+        public void enableOpen()
+        {
+            editionToolStripMenuItem.Enabled = true;
+            affichageToolStripMenuItem.Enabled = true;
+            toolStripMenuItem2.Enabled = true;
+        }
+
+        public void disableOpen()
+        {
+            editionToolStripMenuItem.Enabled = false;
+            affichageToolStripMenuItem.Enabled = false;
+            toolStripMenuItem2.Enabled = false; //enregistrer
+        }
+
         private void chargerUnTactonToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
             openFileDialog1.ShowDialog();
-            if (openFileDialog1.
-            Tactons t = new Tactons(this, this.defx, this.defy, this.deftactonsize);
-            t.chargerMatriceDepuisFichier(openFileDialog1.FileName);
-            this.ens.ajouter(t);
+            if (openFileDialog1.FileName != "")
+            {
+                ens.vider();
+                Tactons t = new Tactons(this, this.defx, this.defy, this.deftactonsize);
+                t.chargerMatriceDepuisFichier(openFileDialog1.FileName);
+                this.ens.ajouter(t);
+                enableOpen();
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            disableOpen();
+        }
+
+        private void chargerUneanimationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.FileName = "";
+            openFileDialog1.ShowDialog();
+            if (openFileDialog1.FileName != "")
+            {
+                ens.vider();
+                this.ens.chargerDynamiqueDepuisFichier(openFileDialog1.FileName, this);
+                enableOpen();
+            }
+        }
+
+        private void nouveauTactonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ens.vider();
+            //demander nombre de point
+            ajouterTactonToolStripMenuItem_Click(this,null);
+            enableOpen();
+            ens.repaint();
+        }
+
+        private void fermerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ens.vider();
+            disableOpen();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (ens.items.Count > 1)
+            { //enregistrement animation
+                MessageBox.Show("Vous allez procéder a l'enregistrement d'une séquence");
+                saveFileDialog1.FileName = "";
+                saveFileDialog1.ShowDialog();
+                if (saveFileDialog1.FileName != "")
+                    {
+                     ens.sauveDynamiqueDansFichier(saveFileDialog1.FileName);
+                    }
+            }
+            else
+            { //enregistrement tacton
+                MessageBox.Show("Vous allez procéder a l'enregistrement d'un tacton seul");
+                saveFileDialog1.FileName = "";
+                saveFileDialog1.ShowDialog();
+                if (saveFileDialog1.FileName != "")
+                    {
+                    Tactons t = ens.items[0];
+                    t.sauverMatriceDansUnFichier(saveFileDialog1.FileName);
+                    }
+            }
         }
 
     }
