@@ -14,6 +14,7 @@ namespace Tacton
         private int up_x, up_y;
         private DateTime down_t, up_t;
         private System.Windows.Forms.Control f;
+        private int marge_pixel, marge_millisec, ecart;
         public event LRMouseDownEventHandler evenement;
 
         public LRClickManager(System.Windows.Forms.Control f)
@@ -40,6 +41,8 @@ namespace Tacton
 
         private void OnMouseUp(object sender, MouseEventArgs e)
         {
+            marge_pixel = 50;
+            marge_millisec = 300;
             TimeSpan t;
             MonEventArgs em = new MonEventArgs(e);
             if (e.Button == MouseButtons.Right)
@@ -53,16 +56,67 @@ namespace Tacton
                 em.temps_appuie = DateTime.Now.Millisecond.ToString();
                 Onevenement(em);
                 t = this.up_t - this.down_t;
-                Console.WriteLine(
-                    "x:" + this.down_x + 
-                    " y:" + this.down_y + 
-                    " t:" + t.TotalMilliseconds + 
-                    "\nx:" + this.up_x + 
-                    " y:" + this.up_y +
-                    " t:" + t.TotalMilliseconds
-                    );
+                ecart = this.up_x - this.down_x;
+                if (t.TotalMilliseconds >= marge_millisec)
+                {
+                    if (ecart > marge_pixel)
+                    {
+                        {
+                            Console.WriteLine(
+                                "activation de l'animation\n" +
+                                "x:" + this.down_x +
+                                " y:" + this.down_y +
+                                " t:" + t.TotalMilliseconds +
+                                "\nx:" + this.up_x +
+                                " y:" + this.up_y +
+                                " t:" + t.TotalMilliseconds
+                                );
+                        }
+                    }
+                    if (ecart < -marge_pixel)
+                    {
+                        Console.WriteLine(
+                                "désactivation de l'animation\n" +
+                                "x:" + this.down_x +
+                                " y:" + this.down_y +
+                                " t:" + t.TotalMilliseconds +
+                                "\nx:" + this.up_x +
+                                " y:" + this.up_y +
+                                " t:" + t.TotalMilliseconds
+                                );
+                    }
+                }
+                else
+                {
+                    if ((ecart < marge_pixel )&& (ecart>=0))
+                    {
+                        {
+                            Console.WriteLine(
+                                "affichage des paramètres\n" +
+                                "x:" + this.down_x +
+                                " y:" + this.down_y +
+                                " t:" + t.TotalMilliseconds +
+                                "\nx:" + this.up_x +
+                                " y:" + this.up_y +
+                                " t:" + t.TotalMilliseconds
+                                );
+                        }
+                    }
+                    if ((ecart > -marge_pixel) && (ecart < -1))
+                    {
+                        Console.WriteLine(
+                                "masquage des paramètres\n" +
+                                "x:" + this.down_x +
+                                " y:" + this.down_y +
+                                " t:" + t.TotalMilliseconds +
+                                "\nx:" + this.up_x +
+                                " y:" + this.up_y +
+                                " t:" + t.TotalMilliseconds
+                                );
+                    }
+                }
             }
-        }
+        }   
 
         private void OnMouseDown(object sender,  MouseEventArgs e)
         {
