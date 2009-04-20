@@ -36,5 +36,15 @@ namespace Tacton
             this.items.Add(t);
             t.repaint();
         }
+        public Tactons getByMouse(int x, int y)
+        {
+            //Tactons t=null;
+            foreach (Tactons t in this.items)
+            {
+                if (t.isIn(x, y))
+                    return t;
+            }
+            return null;
+        }
     }
 }

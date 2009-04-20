@@ -8,10 +8,13 @@ namespace Tacton
 {
     class Tactons
     {
+        public static int id = 0;
+        public int idc;
+
         public Form p; //panel de référence
         private bool[,] matrice; //garde en mémoire l'état des tactons
         public Brush bordure = Brushes.White; // couleur de la bordure de la matrice
-        public Brush tacton_off = Brushes.Gray; //couleur du tacton en position off
+        public Brush tacton_off = Brushes.Beige; //couleur du tacton en position off
         public Brush tacton_on = Brushes.BlueViolet; //couleur du tactons en position on
         public int marge = 5; //marge entre les tactons
 
@@ -103,6 +106,12 @@ namespace Tacton
             return p;
         }
 
+        public bool isIn(int sx, int sy)
+        {
+            Point p = getCoordonnee(sx, sy);
+            return p.X >= 0 && p.Y >= 0 && p.X < this.x && p.Y < this.y;
+        }
+
         public void chargerMatrice(string mat)
         { //charge la matrice a partir d'une séquence
           this.repaint();
@@ -111,6 +120,17 @@ namespace Tacton
         public string sauverMatrice()
         { //renvoie la matrice dans une séquence
             return "";
+        }
+
+        public bool isOn(int x, int y)
+        {
+            if (x < 0 || y < 0 || x >= this.x || y >= this.y)
+                return false;
+            return this.matrice[x, y];
+        }
+        public bool isOn(Point p)
+        {
+            return isOn(p.X, p.Y);
         }
 
         public void repaint()
@@ -132,6 +152,7 @@ namespace Tacton
             //
             //this.p = new Panel();
             //this.p.Parent = f;
+            this.idc = id++;
             this.p = f;
             this.x = x;
             this.y = y;

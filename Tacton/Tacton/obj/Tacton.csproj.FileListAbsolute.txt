@@ -22,3 +22,11 @@ C:\Documents and Settings\Myster coco\Mes documents\projet\Tacton\Tacton\obj\Deb
 C:\Documents and Settings\Myster coco\Mes documents\projet\Tacton\Tacton\obj\Debug\Tacton.Form1.resources
 C:\Documents and Settings\Myster coco\Mes documents\projet\Tacton\Tacton\obj\Debug\Tacton.Properties.Resources.resources
 C:\Documents and Settings\Myster coco\Mes documents\projet\Tacton\Tacton\obj\Debug\Tacton.csproj.GenerateResource.Cache
+F:\Documents and Settings\andrkuhn\Bureau\dnet\Tacton\Tacton\obj\Debug\Tacton.exe
+F:\Documents and Settings\andrkuhn\Bureau\dnet\Tacton\Tacton\obj\Debug\Tacton.pdb
+F:\Documents and Settings\andrkuhn\Bureau\dnet\Tacton\Tacton\obj\Debug\ResolveAssemblyReference.cache
+F:\Documents and Settings\andrkuhn\Bureau\dnet\Tacton\Tacton\obj\Debug\Tacton.Form1.resources
+F:\Documents and Settings\andrkuhn\Bureau\dnet\Tacton\Tacton\obj\Debug\Tacton.Properties.Resources.resources
+F:\Documents and Settings\andrkuhn\Bureau\dnet\Tacton\Tacton\obj\Debug\Tacton.csproj.GenerateResource.Cache
+F:\Documents and Settings\andrkuhn\Bureau\dnet\Tacton\Tacton\bin\Debug\Tacton.exe
+F:\Documents and Settings\andrkuhn\Bureau\dnet\Tacton\Tacton\bin\Debug\Tacton.pdb

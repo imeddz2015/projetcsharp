@@ -59,5 +59,20 @@ namespace Tacton
         {
             //t.deplace(200, 100);
         }
+
+        private void Form1_MouseClick(object sender, MouseEventArgs e)
+        {
+            Tactons t=this.ens.getByMouse(e.X, e.Y);
+
+            if (t != null)
+            {
+                Console.WriteLine(t.idc.ToString());
+                Point p = t.getCoordonnee(e.X, e.Y);
+                if (t.isOn(p))
+                    t.setOff(p);
+                else
+                    t.setOn(p);
+            }
+        }
     }
 }
