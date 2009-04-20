@@ -13,6 +13,9 @@ namespace Tacton
         int xfree = xd-marge;
         int yfree = yd;
         int heighmax = 0;
+
+
+        public int unite_temps=1;
         Form f;
 
         public List<Tactons> items=new List<Tactons>();
@@ -82,6 +85,13 @@ namespace Tacton
                 t.repaint();
         }
 
+        public void vider()
+        {
+            foreach (Tactons t in this.items)
+                    t.effacer();
+            this.items = new List<Tactons>();
+        }
+
         public void chargerDynamiqueDepuisFichier(string fic, Form f)
         {
             Xml x = new Xml();
@@ -94,20 +104,45 @@ namespace Tacton
         }
         public void chargerDynamique(string bin)
         {
-            
+            MessageBox.Show(bin);
             string[] t = bin.Split('#');
-            string val=t[3];
+            int nbl=Convert.ToInt32(t[0]);
+            int nbc=Convert.ToInt32(t[1]);
+            this.unite_temps = Convert.ToInt32(t[3]);
+            string val=t[4];
             string[] ens = val.Split(' ');
             int i;
-            MessageBox.Show(bin);
+            if (ens.Length % 2 != 0)
+                return;
             for (i = 0; i < ens.Length; i = i + 2)
             {
-                int taille=Convert.ToInt32(Math.Sqrt(ens[i+1].Length));
-                Tactons ta = new Tactons(this.f, taille, taille, 20);
+                //int taille=Convert.ToInt32(Math.Sqrt(ens[i+1].Length));
+                Tactons ta = new Tactons(this.f, nbc, nbl, 20);
                 ta.temps = Convert.ToInt32(ens[i]);
                 ta.chargerMatrice(ens[i + 1]);
                 this.ajouter(ta);
             }
+        }
+
+        public void sauveDynamiqueDansFichier(string fichier)
+        { //sauve le binaire dans le fichier xml
+            Xml x = new Xml();
+            x.setNom(fichier);
+            x.writeDyanique(this.sauveDynamique());
+            x.free();
+        }
+
+        public string sauveDynamique()
+        { //renvoie un binaire
+            Tactons t = this.items[0];
+            string header = "Dede#" + t.y + "#" + t.x + "#"+this.items.Count+"#"+this.unite_temps+"#";
+            string body = "";
+            foreach (Tactons ta in this.items)
+                {
+                    body += ta.temps + " " + ta.sauverMatrice().Replace(",","")+" ";
+                }
+            return header + body.Substring(0, body.Length - 1);
+
         }
     }
 }

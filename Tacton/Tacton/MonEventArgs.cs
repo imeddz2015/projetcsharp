@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Tacton
 {
-    class MonEventArgs : MouseEventArgs
+    public class MonEventArgs : MouseEventArgs
     {
         private string _bouton1;
         private string _bouton2;

@@ -22,11 +22,16 @@ namespace Tacton
             XmlNode node = this.docxml.DocumentElement;
             
             string retour = "";
-            
+
+            XmlNode racine = node.SelectSingleNode("/TactonStatique");
+            XmlAttributeCollection attributeCollection = racine.Attributes;
+            string nbl = attributeCollection[2].Value;
+            string nbc = attributeCollection[3].Value;
+
             XmlNodeList nodeList = node.SelectNodes("/TactonStatique/Motif/Ligne/Colonne");
             foreach (XmlNode nod in nodeList)
                 retour+=nod.InnerText;
-            return retour;
+            return nbl+'#'+nbc+'#'+retour;
         }
         public void free()
         {
@@ -38,7 +43,8 @@ namespace Tacton
             //1111,0000,1010,0010
             XmlDeclaration declaration = this.docxml.CreateXmlDeclaration("1.0", "utf-8", "");
             string[] tabTacton = tacton.Split(',');
-            int tailleMatrice = tabTacton.Length;
+            int nbl = tabTacton.Length;
+            int nbc = tabTacton[0].Length;
             docxml.AppendChild(declaration);
             //creation de la racine
             XmlNode racine = docxml.CreateNode(System.Xml.XmlNodeType.Element, "TactonStatique","");
@@ -51,20 +57,20 @@ namespace Tacton
             date.Value=DateTime.Now.ToString();
             racine.Attributes.Append(date);
             XmlAttribute nbligne = docxml.CreateAttribute("nbligne");
-            nbligne.Value=tailleMatrice.ToString();
+            nbligne.Value=nbl.ToString();
             racine.Attributes.Append(nbligne);
             XmlAttribute nbcolonne = docxml.CreateAttribute("nbcolonne");
-            nbcolonne.Value=tailleMatrice.ToString();
+            nbcolonne.Value=nbc.ToString();
             racine.Attributes.Append(nbcolonne);
 
             XmlNode motif = docxml.CreateElement("Motif");
-            for (int i = 1; i <tailleMatrice+1 ; i++)
+            for (int i = 1; i <nbc+1 ; i++)
             {
                 XmlNode ligne = docxml.CreateElement("Ligne");
                 XmlAttribute numeroLigne = docxml.CreateAttribute("numero");
                 numeroLigne.Value = i.ToString();
                 ligne.Attributes.Append(numeroLigne);
-                for(int j = 1;j<tailleMatrice+1;j++)
+                for(int j = 1;j<nbl+1;j++)
                 {
                     XmlNode colonne = docxml.CreateElement("Colonne");
                     XmlAttribute numeroColonne = docxml.CreateAttribute("numero");
@@ -77,7 +83,7 @@ namespace Tacton
             }
             racine.AppendChild(motif);
             docxml.AppendChild(racine);
-            docxml.Save("test.xml");
+            docxml.Save(this.nom);
         }
         public string readDynamique()
         {
@@ -87,14 +93,18 @@ namespace Tacton
             XmlAttributeCollection attributeCollection = racine.Attributes;
             string auteur = attributeCollection[0].Value;
             string date = attributeCollection[1].Value;
-            int tailleMatrice = Convert.ToInt32(attributeCollection[2].Value);
+            //int tailleMatrice = Convert.ToInt32(attributeCollection[2].Value);
+            int nbl = Convert.ToInt32(attributeCollection[2].Value);
+            int nbc = Convert.ToInt32(attributeCollection[3].Value);
             int nombreTacton = Convert.ToInt32(attributeCollection[4].Value);
             double uniteTemps = Convert.ToDouble(attributeCollection[5].Value);
-            retour += tailleMatrice.ToString() + "#" + nombreTacton.ToString() + "#" + uniteTemps.ToString() + "#";
+            retour += nbl.ToString()+"#"+ nbc.ToString() + "#" + nombreTacton.ToString() + "#" + uniteTemps.ToString() + "#";
             string text = racine.InnerText.ToString();
+            Console.WriteLine(text);
             int pos = text.LastIndexOf("\r\n");
             return retour+text.Substring(pos+5, text.Length - (pos+5));
-        } //
+        } // taille matrice, nombre tacton, unite de temps
+
         public void writeDyanique(string tacton)
         {
             //auteur#nbLigne#nbColonne#nbImage#uniteTemps#10 0101010111001010 10 0000111100001111 
@@ -133,7 +143,7 @@ namespace Tacton
                 numeroImage.Value = (i+1).ToString();
                 nodeImage.Attributes.Append(numeroImage);
                 XmlNode nodeDuree = docxml.CreateElement("Duree");
-                nodeDuree.InnerText = detailsImage[i * 2];
+                nodeDuree.InnerText = " "+detailsImage[i * 2]+" ";
                 nodeImage.AppendChild(nodeDuree);
                 XmlNode nodeMotif = docxml.CreateElement("Motif");
                 for (int j = 0; j < nbLigne; j++)
@@ -158,7 +168,7 @@ namespace Tacton
                 racine.AppendChild(nodeImage);
             }
             docxml.AppendChild(racine);
-            docxml.Save("testDynamique.xml");
+            docxml.Save(this.nom);
 
         }
 
