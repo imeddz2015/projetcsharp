@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml;
 
-namespace ProjetFourTout
+namespace Tacton
 {
     class Xml
     {
@@ -25,13 +25,14 @@ namespace ProjetFourTout
             
             XmlNodeList nodeList = node.SelectNodes("/TactonStatique/Motif/Ligne/Colonne");
             foreach (XmlNode nod in nodeList)
-                Console.Write(nod.InnerText);
+                retour+=nod.InnerText;
             return retour;
         }
         public void free()
         {
             this.docxml = new XmlDocument();
         }
+
         public void writeStatic(string tacton)
         {
             //1111,0000,1010,0010

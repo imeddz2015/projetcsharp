@@ -76,7 +76,7 @@ namespace Tacton
             //MessageBox.Show(e.X.ToString() + ", " + e.Y.ToString());
             if (t != null)
             {
-                Console.WriteLine(t.idc.ToString());
+                //Console.WriteLine(t.idc.ToString());
                 Point p = t.getCoordonnee(e.X, e.Y);
                 if (t.isOn(p))
                     t.setOff(p);
@@ -91,12 +91,22 @@ namespace Tacton
             if (t != null)
             {
                 this.ens.effacer(t);
+                this.ens.replacer();
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             this.ens.replacer();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Tactons t = new Tactons(this, 0, 0, 20);
+            openFileDialog1.ShowDialog();
+
+            t.chargerMatrice(openFileDialog1.FileName, false);
+            this.ens.ajouter(t);
         }
     }
 }
