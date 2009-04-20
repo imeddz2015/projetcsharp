@@ -90,6 +90,7 @@ namespace Tacton
             foreach (Tactons t in this.items)
                     t.effacer();
             this.items = new List<Tactons>();
+            this.replacer();
         }
 
         public void chargerDynamiqueDepuisFichier(string fic, Form f)
@@ -104,7 +105,7 @@ namespace Tacton
         }
         public void chargerDynamique(string bin)
         {
-            MessageBox.Show(bin);
+            //MessageBox.Show(bin);
             string[] t = bin.Split('#');
             int nbl=Convert.ToInt32(t[0]);
             int nbc=Convert.ToInt32(t[1]);
