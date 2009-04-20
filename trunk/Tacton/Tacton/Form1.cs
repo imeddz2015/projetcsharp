@@ -11,11 +11,19 @@ namespace Tacton
     public partial class Form1 : Form
     {
         EnsembleTactons ens;//=new EnsembleTactons();
+        LRClickManager lr;
         public bool clicked;
         public Form1()
         {
             ens = new EnsembleTactons();
             InitializeComponent();
+            lr = new LRClickManager(this);
+            lr += new LRMouseDownEventHandler(MajStatus);
+        }
+
+        private void MajStatus(object sender, MonEventArgs e)
+        {
+            //this.toolStripStatusLabel1.Text = "Ordre d'appui des boutons: " + e.bouton1 + " - " + e.bouton2 + " Délai: " + e.temps + "ms";
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
