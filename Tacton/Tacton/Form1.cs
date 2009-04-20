@@ -102,11 +102,14 @@ namespace Tacton
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Tactons t = new Tactons(this, 0, 0, 20);
+            /*Tactons t = new Tactons(this, 0, 0, 20);
             openFileDialog1.ShowDialog();
 
-            t.chargerMatrice(openFileDialog1.FileName, false);
-            this.ens.ajouter(t);
+            t.chargerMatriceDepuisFichier(openFileDialog1.FileName);
+            this.ens.ajouter(t);*/
+            openFileDialog1.ShowDialog();
+            this.ens.chargerDynamiqueDepuisFichier(openFileDialog1.FileName, this);
+            
         }
     }
 }
