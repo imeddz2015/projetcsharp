@@ -116,33 +116,33 @@ namespace Tacton
             return p.X >= 0 && p.Y >= 0 && p.X < this.x && p.Y < this.y;
         }
 
-        public void chargerMatrice(string mat, bool dynamique)
+        public void chargerMatriceDepuisFichier(string mat)
         { //charge la matrice a partir d'une séquence
             Xml x = new Xml();
             x.setNom(mat);
             x.open();       
-            if (dynamique)
-            {
-            }
-            else
             {
                 string s = x.readStatic();
-                int taille = Convert.ToInt32(Math.Sqrt(s.Length));
-                this.x = taille;
-                this.y = taille;
-                this.matrice = new bool[this.x, this.y];
-                int i, j;
-                for (i = 0; i < this.x; i++)
-                    for (j = 0; j < this.y; j++)
-                        if (s[i * j] == '1')
-                            this.matrice[i, j] = true;
-                        else
-                            this.matrice[i, j] = false;
-                this.width = this.x * tsize + marge * this.x + marge;
-                this.height = this.y * tsize + marge * this.y + marge;
+                chargerMatrice(s);
             }
           x.free();
           //this.repaint();
+        }
+        public void chargerMatrice(string s)
+        {
+            int taille = Convert.ToInt32(Math.Sqrt(s.Length));
+            this.x = taille;
+            this.y = taille;
+            this.matrice = new bool[this.x, this.y];
+            int i, j;
+            for (i = 0; i < this.x; i++)
+                for (j = 0; j < this.y; j++)
+                    if (s[i * j] == '1')
+                        this.matrice[i, j] = true;
+                    else
+                        this.matrice[i, j] = false;
+            this.width = this.x * tsize + marge * this.x + marge;
+            this.height = this.y * tsize + marge * this.y + marge;
         }
 
         public string sauverMatrice()

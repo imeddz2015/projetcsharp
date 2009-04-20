@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Tacton
 {
@@ -12,7 +13,7 @@ namespace Tacton
         int xfree = xd-marge;
         int yfree = yd;
         int heighmax = 0;
-        
+        Form f;
 
         public List<Tactons> items=new List<Tactons>();
         public void ajouter(Tactons t)
@@ -79,6 +80,34 @@ namespace Tacton
         {
             foreach (Tactons t in this.items)
                 t.repaint();
+        }
+
+        public void chargerDynamiqueDepuisFichier(string fic, Form f)
+        {
+            Xml x = new Xml();
+            x.setNom(fic);
+            x.open();
+            string s = x.readDynamique();
+            this.f = f;
+            chargerDynamique(s);
+            x.free();
+        }
+        public void chargerDynamique(string bin)
+        {
+            
+            string[] t = bin.Split('#');
+            string val=t[3];
+            string[] ens = val.Split(' ');
+            int i;
+            MessageBox.Show(bin);
+            for (i = 0; i < ens.Length; i = i + 2)
+            {
+                int taille=Convert.ToInt32(Math.Sqrt(ens[i+1].Length));
+                Tactons ta = new Tactons(this.f, taille, taille, 20);
+                ta.temps = Convert.ToInt32(ens[i]);
+                ta.chargerMatrice(ens[i + 1]);
+                this.ajouter(ta);
+            }
         }
     }
 }

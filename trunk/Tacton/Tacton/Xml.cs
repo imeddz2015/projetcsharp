@@ -94,7 +94,7 @@ namespace Tacton
             string text = racine.InnerText.ToString();
             int pos = text.LastIndexOf("\r\n");
             return retour+text.Substring(pos+5, text.Length - (pos+5));
-        }
+        } //
         public void writeDyanique(string tacton)
         {
             //auteur#nbLigne#nbColonne#nbImage#uniteTemps#10 0101010111001010 10 0000111100001111 
