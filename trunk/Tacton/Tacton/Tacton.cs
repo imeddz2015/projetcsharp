@@ -43,14 +43,18 @@ namespace Tacton
 
         public void deplace(int x, int y)
         {
-            Graphics g = this.getGraphics();
             //efface le vieu
-            g.FillRectangle((new Pen(this.p.BackColor)).Brush, posx, posy, width+2, height+2);
+            this.effacer();
             //maj
             this.posx = x;
             this.posy = y;
             //construit le nouveau
             this.repaint();
+        }
+
+        public void effacer()
+        {
+            this.getGraphics().FillRectangle((new Pen(this.p.BackColor)).Brush, posx, posy, width + 2, height + 2);
         }
 
         public void setOn(int pos)

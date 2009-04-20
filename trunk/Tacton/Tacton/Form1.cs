@@ -11,6 +11,7 @@ namespace Tacton
     public partial class Form1 : Form
     {
         EnsembleTactons ens;//=new EnsembleTactons();
+        public bool clicked;
         public Form1()
         {
             ens = new EnsembleTactons();
@@ -46,7 +47,8 @@ namespace Tacton
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //t.repaint();
+            //t.repaint();.
+            ens.repaint();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -63,7 +65,7 @@ namespace Tacton
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
             Tactons t=this.ens.getByMouse(e.X, e.Y);
-
+            //MessageBox.Show(e.X.ToString() + ", " + e.Y.ToString());
             if (t != null)
             {
                 Console.WriteLine(t.idc.ToString());
@@ -73,6 +75,20 @@ namespace Tacton
                 else
                     t.setOn(p);
             }
+        }
+
+        private void Form1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Tactons t = this.ens.getByMouse(e.X, e.Y);
+            if (t != null)
+            {
+                this.ens.effacer(t);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.ens.replacer();
         }
     }
 }
