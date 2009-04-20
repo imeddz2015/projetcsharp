@@ -96,7 +96,7 @@ namespace Tacton
                 this.getGraphics().FillEllipse(this.tacton_off, r);
                 this.matrice[x, y] = false;
             }
-            else Console.WriteLine("hors limite");
+           // else Console.WriteLine("hors limite");
 
         }
         public Point getCoordonnee(int sx, int sy)
@@ -116,9 +116,33 @@ namespace Tacton
             return p.X >= 0 && p.Y >= 0 && p.X < this.x && p.Y < this.y;
         }
 
-        public void chargerMatrice(string mat)
+        public void chargerMatrice(string mat, bool dynamique)
         { //charge la matrice a partir d'une séquence
-          this.repaint();
+            Xml x = new Xml();
+            x.setNom(mat);
+            x.open();       
+            if (dynamique)
+            {
+            }
+            else
+            {
+                string s = x.readStatic();
+                int taille = Convert.ToInt32(Math.Sqrt(s.Length));
+                this.x = taille;
+                this.y = taille;
+                this.matrice = new bool[this.x, this.y];
+                int i, j;
+                for (i = 0; i < this.x; i++)
+                    for (j = 0; j < this.y; j++)
+                        if (s[i * j] == '1')
+                            this.matrice[i, j] = true;
+                        else
+                            this.matrice[i, j] = false;
+                this.width = this.x * tsize + marge * this.x + marge;
+                this.height = this.y * tsize + marge * this.y + marge;
+            }
+          x.free();
+          //this.repaint();
         }
 
         public string sauverMatrice()
