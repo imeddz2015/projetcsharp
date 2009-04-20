@@ -19,14 +19,14 @@ namespace Tacton
         public int marge = 5; //marge entre les tactons
 
         public int tsize; //taille du tacton
-        public int x; //nombre de tactons en ligne
-        public int y; //nombre de tactons en colonne
+        public int x=-1; //nombre de tactons en ligne
+        public int y=-1; //nombre de tactons en colonne
         public int posx; //position left de la matrice
         public int posy; //position top de la matrice
         public int height; //hauteur  +2 pour le bord
         public int width; //largeur +2 pour le bord
 
-        public int temps=0; //temps du tacton
+        public int temps=1; //temps du tacton
 
         private Graphics getGraphics()
         { //renvoi le graphics du panel en cours
@@ -123,7 +123,10 @@ namespace Tacton
             x.open();       
             {
                 string s = x.readStatic();
-                chargerMatrice(s);
+                string[] list = s.Split('#');
+                this.y = Convert.ToInt32(list[0]);
+                this.x = Convert.ToInt32(list[1]);
+                chargerMatrice(list[2]);
             }
           x.free();
           //this.repaint();
@@ -131,13 +134,15 @@ namespace Tacton
         public void chargerMatrice(string s)
         {
             int taille = Convert.ToInt32(Math.Sqrt(s.Length));
-            this.x = taille;
-            this.y = taille;
+            if (this.x == -1) //si on ne sait pas, on considere un tacton carre donc de largeur sqrt()
+                this.x = taille;
+            if (this.y==-1)
+                this.y = taille;
             this.matrice = new bool[this.x, this.y];
             int i, j;
             for (i = 0; i < this.x; i++)
                 for (j = 0; j < this.y; j++)
-                    if (s[i * j] == '1')
+                    if (s[(i*taille) + j] == '1')
                         this.matrice[i, j] = true;
                     else
                         this.matrice[i, j] = false;
@@ -145,10 +150,30 @@ namespace Tacton
             this.height = this.y * tsize + marge * this.y + marge;
         }
 
-        public string sauverMatrice()
-        { //renvoie la matrice dans une séquence
-            return "";
+        public void sauverMatriceDansUnFichier(string fichier)
+        { //sauve la matrice dans le fichier en parametre
+            Xml x = new Xml();
+            x.setNom(fichier);
+            string bin = sauverMatrice();
+            //MessageBox.Show(bin);
+            x.writeStatic(bin);
+            x.free();
         }
+
+        public string sauverMatrice()
+        { //renvoie le binaire statique
+            string ret = "";
+            int i, j;
+            for (i = 0; i < this.x; i++)
+            {
+                for (j = 0; j < this.y; j++)
+                    ret += this.matrice[i, j] ? "1" : "0";
+                ret += ',';
+            }
+            return ret.Substring(0, ret.Length - 1);
+        }
+
+
 
         public bool isOn(int x, int y)
         {
@@ -164,6 +189,10 @@ namespace Tacton
         public void repaint()
         { //repaind les tactons en fonction de la matrice de sauvegarde
             //pourtour
+            Form1 f = this.p as Form1;
+            this.tacton_off = f.deftacton_off;
+            this.tacton_on = f.deftacton_on;
+            this.bordure = f.defbordure;
             this.getGraphics().DrawRectangle(new Pen(this.bordure), posx, posy, width, height);
             //points
             int i, j;
@@ -190,7 +219,6 @@ namespace Tacton
             //this.p.Left = this.posx;
             //this.p.Top = this.posy;
             this.matrice=new bool[x,y];
-            p.MouseClick += (f as Form1).panel1_MouseClick;
             //
             this.width = x * tsize + marge * x + marge;
             this.height = y * tsize + marge * y + marge;

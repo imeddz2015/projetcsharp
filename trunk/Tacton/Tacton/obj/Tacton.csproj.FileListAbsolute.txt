@@ -30,3 +30,12 @@ F:\Documents and Settings\andrkuhn\Bureau\dnet\Tacton\Tacton\obj\Debug\Tacton.Pr
 F:\Documents and Settings\andrkuhn\Bureau\dnet\Tacton\Tacton\obj\Debug\Tacton.csproj.GenerateResource.Cache
 F:\Documents and Settings\andrkuhn\Bureau\dnet\Tacton\Tacton\bin\Debug\Tacton.exe
 F:\Documents and Settings\andrkuhn\Bureau\dnet\Tacton\Tacton\bin\Debug\Tacton.pdb
+C:\Documents and Settings\Myster coco\Mes documents\projet2\Tacton\Tacton\obj\Debug\Tacton.exe
+C:\Documents and Settings\Myster coco\Mes documents\projet2\Tacton\Tacton\obj\Debug\Tacton.pdb
+C:\Documents and Settings\Myster coco\Mes documents\projet2\Tacton\Tacton\bin\Debug\Tacton.exe
+C:\Documents and Settings\Myster coco\Mes documents\projet2\Tacton\Tacton\bin\Debug\Tacton.pdb
+C:\Documents and Settings\Myster coco\Mes documents\projet2\Tacton\Tacton\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Myster coco\Mes documents\projet2\Tacton\Tacton\obj\Debug\Tacton.Form1.resources
+C:\Documents and Settings\Myster coco\Mes documents\projet2\Tacton\Tacton\obj\Debug\Tacton.Properties.Resources.resources
+C:\Documents and Settings\Myster coco\Mes documents\projet2\Tacton\Tacton\obj\Debug\Tacton.csproj.GenerateResource.Cache
+C:\Documents and Settings\Myster coco\Mes documents\projet2\Tacton\Tacton\obj\Debug\Tacton.Fduree.resources
