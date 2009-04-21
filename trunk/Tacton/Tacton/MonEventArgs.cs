@@ -7,47 +7,54 @@ namespace Tacton
 {
     public class MonEventArgs : MouseEventArgs
     {
-        private string _bouton1;
-        private string _bouton2;
-        private string _temps;
-        private int x, y;
-        private string t;
+        private int up_x, up_y, down_x, down_y;
+        private DateTime down_t, up_t;
+        private TimeSpan t;
 
         public MonEventArgs(MouseEventArgs e): base(e.Button, e.Clicks, e.X, e.Y, e.Delta)
         {
-            _bouton1 = _bouton2 = _temps = t = "";
-            x = y = 0;
-        }
-        public string bouton1
-        {
-            get { return _bouton1; }
-            set { _bouton1 = value; }
-        }
-        public string bouton2
-        {
-            get { return _bouton2; }
-            set { _bouton2 = value ; }
-        }
-        public string temps
-        {
-            get { return _temps; }
-            set { _temps = value; }
-        }
-        public int position_x
-        {
-            get { return x; }
-            set { x = value; }
         }
 
-        public int position_y
-        {
-            get { return y; }
-            set { y = value; }
-        }
-        public string temps_appuie
+        public TimeSpan temps_appuie
         {
             get { return t; }
-            set { t = value; }
+            set { t = up_t - down_t;}
+        }
+
+        public int position_up_x
+        {
+            get { return up_x; }
+            set { up_x = value; }
+        }
+
+        public int position_up_y
+        {
+            get { return up_y; }
+            set { up_y = value; }
+        }
+
+        public int position_down_x
+        {
+            get { return down_x; }
+            set { down_x = value; }
+        }
+
+        public int position_down_y
+        {
+            get { return down_y; }
+            set { down_y = value; }
+        }
+
+        public DateTime temps_down_t
+        {
+            get { return down_t; }
+            set { down_t = value; }
+        }
+
+        public DateTime temps_up_t
+        {
+            get { return up_t; }
+            set { up_t = value; }
         }
     }
 }
