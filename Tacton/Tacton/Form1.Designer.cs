@@ -72,6 +72,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(917, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Paint += new System.Windows.Forms.PaintEventHandler(this.menuStrip1_Paint);
             // 
             // fichierToolStripMenuItem
             // 
@@ -179,15 +180,16 @@
             // repeindreToolStripMenuItem
             // 
             this.repeindreToolStripMenuItem.Name = "repeindreToolStripMenuItem";
-            this.repeindreToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.repeindreToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.repeindreToolStripMenuItem.Text = "&Repeindre";
             this.repeindreToolStripMenuItem.Click += new System.EventHandler(this.repeindreToolStripMenuItem_Click);
             // 
             // parametresToolStripMenuItem
             // 
             this.parametresToolStripMenuItem.Name = "parametresToolStripMenuItem";
-            this.parametresToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.parametresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.parametresToolStripMenuItem.Text = "&Parametres";
+            this.parametresToolStripMenuItem.Click += new System.EventHandler(this.parametresToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -223,7 +225,11 @@
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "Fichier xml|*.xml";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "Fichier xml | *.xml";
             // 
             // contextMenuStrip1
             // 
@@ -259,7 +265,7 @@
             this.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Traitement des tactons | Dupire, Matyja, Kuhn 2009";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);

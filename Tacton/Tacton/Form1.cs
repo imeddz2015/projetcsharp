@@ -143,9 +143,18 @@ namespace Tacton
             openFileDialog1.ShowDialog();
             if (openFileDialog1.FileName != "")
             {
-                ens.vider();
+                
                 Tactons t = new Tactons(this, this.defx, this.defy, this.deftactonsize);
-                t.chargerMatriceDepuisFichier(openFileDialog1.FileName);
+                try
+                {
+                    t.chargerMatriceDepuisFichier(openFileDialog1.FileName);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Impossible d'ouvrir le tacton :\n" + ex.Message);
+                    return;
+                }
+                ens.vider();
                 this.ens.ajouter(t);
                 enableOpen();
             }
@@ -162,19 +171,39 @@ namespace Tacton
             openFileDialog1.ShowDialog();
             if (openFileDialog1.FileName != "")
             {
+
+                try
+                {
+                    this.ens.chargerDynamiqueDepuisFichier(openFileDialog1.FileName, this);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Impossible de charger l'animation :\n" + ex.Message);
+                    return;
+                }
                 ens.vider();
-                this.ens.chargerDynamiqueDepuisFichier(openFileDialog1.FileName, this);
                 enableOpen();
             }
         }
 
         private void nouveauTactonToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ens.vider();
+            
             //demander nombre de point
-            ajouterTactonToolStripMenuItem_Click(this,null);
-            enableOpen();
-            ens.repaint();
+            tsize t = new tsize();
+            t.nbc = this.defy;
+            t.nbl = this.defx;
+            t.charger();
+            t.ShowDialog();
+            if (t.valide)
+            {
+                this.defx = t.nbl;
+                this.defy = t.nbc;
+                ens.vider();
+                ajouterTactonToolStripMenuItem_Click(this, null);
+                enableOpen();
+                ens.repaint();
+            }
         }
 
         private void fermerToolStripMenuItem_Click(object sender, EventArgs e)
@@ -185,6 +214,11 @@ namespace Tacton
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
+            if (ens.items.Count == 0)
+            {
+                MessageBox.Show("Aucun tacton a enregistrer");
+                return;
+            }
             if (ens.items.Count > 1)
             { //enregistrement animation
                 MessageBox.Show("Vous allez procéder a l'enregistrement d'une séquence");
@@ -206,6 +240,63 @@ namespace Tacton
                     t.sauverMatriceDansUnFichier(saveFileDialog1.FileName);
                     }
             }
+        }
+
+        private void menuStrip1_Paint(object sender, PaintEventArgs e)
+        {
+            this.ens.repaint();
+        }
+
+        private void parametresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /*public int deftactonsize = 20;
+        public Brush defbordure = Brushes.White; // couleur de la bordure de la matrice
+        public Brush deftacton_off = Brushes.Beige; //couleur du tacton en position off
+        public Brush deftacton_on = Brushes.BlueViolet;
+            */
+            Form3 f = new Form3();
+            Color toff, ton, bor;
+            bool changement = false;
+            Pen p = new Pen(this.deftacton_off);
+            toff = p.Color;
+            f.te = toff;
+            p = new Pen(this.deftacton_on);
+            ton = p.Color;
+            f.ta = ton;
+            p = new Pen(this.defbordure);
+            bor = p.Color;
+            f.bor = bor;
+            f.tt = this.deftactonsize;
+            f.charger();
+            f.ShowDialog();
+            //MessageBox.Show(f.te.ToString());
+            if (f.te.ToArgb() != toff.ToArgb())
+            {
+                //MessageBox.Show("off dif");
+                changement = true;
+                this.deftacton_off = (new Pen(f.te)).Brush;
+            }
+            if (f.ta.ToArgb() != ton.ToArgb())
+            {
+                //MessageBox.Show("on dif");
+                changement = true;
+                this.deftacton_on = (new Pen(f.ta)).Brush;
+            }
+            if (f.bor.ToArgb() != bor.ToArgb())
+            {
+                //MessageBox.Show("bord dif");
+                changement = true;
+                this.defbordure = (new Pen(f.bor)).Brush;
+            }
+            if (this.deftactonsize != f.tt)
+            {
+                //MessageBox.Show("size dif");
+                changement = true;
+                this.deftactonsize = f.tt;
+                this.ens.setTactonSize(this.deftactonsize);
+            }
+            if (changement)
+                this.ens.repaint();
         }
 
     }

@@ -146,8 +146,9 @@ namespace Tacton
                         this.matrice[i, j] = true;
                     else
                         this.matrice[i, j] = false;
-            this.width = this.x * tsize + marge * this.x + marge;
-            this.height = this.y * tsize + marge * this.y + marge;
+            //this.width = this.x * tsize + marge * this.x + marge;
+            //this.height = this.y * tsize + marge * this.y + marge;
+            this.calculSize();
         }
 
         public void sauverMatriceDansUnFichier(string fichier)
@@ -203,6 +204,11 @@ namespace Tacton
                     else
                         this.setOff(i, j);
         }
+        public void calculSize()
+        {
+            this.width = x * tsize + marge * x + marge;
+            this.height = y * tsize + marge * y + marge;
+        }
 
         private void buildTactons(Form f, int x, int y, int tsize, int posx, int posy)
         { // extension du constructeur, on assigne les variables par défaut et on construit notre classe
@@ -220,8 +226,7 @@ namespace Tacton
             //this.p.Top = this.posy;
             this.matrice=new bool[x,y];
             //
-            this.width = x * tsize + marge * x + marge;
-            this.height = y * tsize + marge * y + marge;
+            this.calculSize();
             //p.Width = width+posx+marge; p.Height = height+posy+marge;
 
             //Graphics g = this.getGraphics();
