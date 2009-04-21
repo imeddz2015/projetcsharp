@@ -85,6 +85,18 @@ namespace Tacton
                 t.repaint();
         }
 
+        public void setTactonSize(int taille)
+        {
+            foreach (Tactons t in this.items)
+                {
+                t.effacer();
+                t.tsize = taille;
+                t.calculSize();
+                t.deplace(t.posx, t.posy);
+                }
+            this.replacer();
+        }
+
         public void vider()
         {
             foreach (Tactons t in this.items)
