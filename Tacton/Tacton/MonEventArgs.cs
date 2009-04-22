@@ -56,5 +56,12 @@ namespace Tacton
             get { return up_t; }
             set { up_t = value; }
         }
+
+        public void initialiser()
+        {
+            position_down_x = position_down_y = position_up_x = position_up_y = 0;
+            temps_down_t = temps_up_t = new DateTime();
+
+        }
     }
 }

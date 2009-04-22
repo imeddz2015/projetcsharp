@@ -6,7 +6,7 @@ using System.Drawing;
 
 namespace Tacton
 {
-    class Tactons
+    public class Tactons
     {
         public static int id = 0;
         public int idc;
@@ -142,7 +142,7 @@ namespace Tacton
             int i, j;
             for (i = 0; i < this.x; i++)
                 for (j = 0; j < this.y; j++)
-                    if (s[(i*taille) + j] == '1')
+                    if (s[(i*this.y) + j] == '1')
                         this.matrice[i, j] = true;
                     else
                         this.matrice[i, j] = false;
@@ -190,10 +190,23 @@ namespace Tacton
         public void repaint()
         { //repaind les tactons en fonction de la matrice de sauvegarde
             //pourtour
-            Form1 f = this.p as Form1;
-            this.tacton_off = f.deftacton_off;
-            this.tacton_on = f.deftacton_on;
-            this.bordure = f.defbordure;
+            if (this.p is Form1)
+            {
+                Form1 f = this.p as Form1;
+                this.tacton_off = f.deftacton_off;
+                this.tacton_on = f.deftacton_on;
+                this.bordure = f.defbordure;
+            }
+            else
+            {
+                Form5 f = this.p as Form5;
+                this.tacton_off = f.deftacton_off;
+                this.tacton_on = f.deftacton_on;
+                this.bordure = f.defbordure;
+            }
+           
+
+
             this.getGraphics().DrawRectangle(new Pen(this.bordure), posx, posy, width, height);
             //points
             int i, j;

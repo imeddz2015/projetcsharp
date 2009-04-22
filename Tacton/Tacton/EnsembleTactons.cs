@@ -5,20 +5,27 @@ using System.Windows.Forms;
 
 namespace Tacton
 {
-    class EnsembleTactons
+    public class EnsembleTactons
     {
-        static int xd = 10;
-        static int yd = 40;
-        static int marge = 20;
-        int xfree = xd-marge;
-        int yfree = yd;
-        int heighmax = 0;
+        public int  xd = 10;
+        public int  yd = 40;
+        public int  marge = 20;
+        public int xfree;// = xd - marge;
+        public int yfree;// = yd;
+        public int heighmax = 0;
 
 
         public int unite_temps=1;
         Form f;
 
         public List<Tactons> items=new List<Tactons>();
+
+        public EnsembleTactons()
+        {
+            this.xfree = xd - marge;
+            this.yfree = yd;
+        }
+
         public void ajouter(Tactons t)
         {
             if (t == null)

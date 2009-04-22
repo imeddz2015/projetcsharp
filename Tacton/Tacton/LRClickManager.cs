@@ -45,10 +45,10 @@ namespace Tacton
             {
                 em.position_up_x = e.X;
                 em.position_up_y = e.Y;
+                em.position_down_x = this.down_x;
+                em.position_down_y = this.down_y;
                 em.temps_up_t = DateTime.Now;
                 em.temps_down_t = this.down_t;
-                em.position_down_x = this.down_x;
-                em.position_up_x = this.up_x;
 
                 this.up_x = e.X;
                 this.up_y = e.Y;
@@ -56,87 +56,26 @@ namespace Tacton
 
                 Onevenement(em);
                 
-                t = this.up_t - this.down_t;
-                //t = em.temps_up_t - em.temps_down_t;
-
-                ecart = this.up_x - this.down_x;
-                //ecart = em.position_up_x - em.position_down_x;
                 
-                if (t.TotalMilliseconds >= marge_millisec)
-                {
-                    if (ecart > marge_pixel)
-                    {
-                        Console.WriteLine(
-                            "activation de l'animation\n" +
-                            "x:" + this.down_x +
-                            " y:" + this.down_y +
-                            " t:" + t.TotalMilliseconds +
-                            "\nx:" + this.up_x +
-                            " y:" + this.up_y +
-                            " t:" + t.TotalMilliseconds
-                            );
-                    }
-                    if (ecart < -marge_pixel)
-                    {
-                        Console.WriteLine(
-                            "désactivation de l'animation\n" +
-                            "x:" + this.down_x +
-                            " y:" + this.down_y +
-                            " t:" + t.TotalMilliseconds +
-                            "\nx:" + this.up_x +
-                            " y:" + this.up_y +
-                            " t:" + t.TotalMilliseconds
-                            );
-                    }
-                }
-                else
-                {
-                    if ((ecart < marge_pixel )&& (ecart>0))
-                    {
-                        Console.WriteLine(
-                            "affichage des paramètres\n" +
-                            "x:" + this.down_x +
-                            " y:" + this.down_y +
-                            " t:" + t.TotalMilliseconds +
-                            "\nx:" + this.up_x +
-                            " y:" + this.up_y +
-                            " t:" + t.TotalMilliseconds
-                            );
-                    }
-                    if ((ecart > -marge_pixel) && (ecart < -1))
-                    {
-                        Console.WriteLine(
-                            "masquage des paramètres\n" +
-                            "x:" + this.down_x +
-                            " y:" + this.down_y +
-                            " t:" + t.TotalMilliseconds +
-                            "\nx:" + this.up_x +
-                            " y:" + this.up_y +
-                            " t:" + t.TotalMilliseconds
-                            );
-                    }
-                }
             }
         }   
 
         private void OnMouseDown(object sender,  MouseEventArgs e)
         {
-            MonEventArgs em = new MonEventArgs(e);
             if (e.Button == MouseButtons.Right)
             {
-                em.position_down_x = e.X;
-                em.position_down_y = e.Y;
-                em.temps_down_t = DateTime.Now;
                 this.down_x = e.X;
                 this.down_y = e.Y;
                 this.down_t = DateTime.Now;
-                Onevenement(em);
             }
         }
         public void Onevenement(MonEventArgs em)
         {
-            if (em!=null)
+            if (em != null)
+            {
                 evenement(f, em);
+                em.initialiser();
+            }
         }
     }
 }
