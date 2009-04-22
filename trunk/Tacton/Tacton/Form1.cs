@@ -10,7 +10,7 @@ namespace Tacton
 {
     public partial class Form1 : Form
     {
-        EnsembleTactons ens;//=new EnsembleTactons();
+        public EnsembleTactons ens;//=new EnsembleTactons();
         Point MousePosition=new Point(0,0);
         LRClickManager lr;
         public int defx = 4;
@@ -20,11 +20,72 @@ namespace Tacton
         public Brush deftacton_off = Brushes.Beige; //couleur du tacton en position off
         public Brush deftacton_on = Brushes.BlueViolet;
 
+        public int vitesse_animation=100, boucle_animation=1;
+
         public bool clicked;
         
 
         public void MajStatus(object sender, MonEventArgs arg)
         {
+            int ecart;
+            int marge_pixel = 100;
+            int marge_millisec = 300;
+            TimeSpan t;
+            t = arg.temps_up_t - arg.temps_down_t;
+            //t = em.temps_up_t - em.temps_down_t;
+
+            ecart = arg.position_up_x - arg.position_down_x;
+            //ecart = em.position_up_x - em.position_down_x;
+
+           // if (t.TotalMilliseconds >= marge_millisec)
+            //{
+                if (ecart > marge_pixel)
+                {
+                    Console.WriteLine(
+                        "activation de l'animation\n" +
+                        "x:" + arg.position_down_x +
+                        " y:" + arg.position_down_y +
+                        " t:" + t.TotalMilliseconds +
+                        "\nx:" + arg.position_up_x +
+                        " y:" + arg.position_up_y +
+                        " t:" + t.TotalMilliseconds
+                        );
+                    if (this.ens.items.Count > 0)
+                    {
+                        Form5 f = new Form5();
+                        f.f = this;
+                        f.ShowDialog();
+                    }
+                }
+           // }
+            //else
+           // {
+                if ((ecart < marge_pixel) && (ecart > 0))
+                {
+                    Console.WriteLine(
+                        "affichage des paramètres\n" +
+                        "x:" + arg.position_down_x +
+                        " y:" + arg.position_down_y +
+                        " t:" + t.TotalMilliseconds +
+                        "\nx:" + arg.position_up_x +
+                        " y:" + arg.position_up_y +
+                        " t:" + t.TotalMilliseconds
+                        );
+                    if (this.ens.items.Count > 0)
+                    {
+                        Form4 f = new Form4();
+                        f.v_anim = vitesse_animation;
+                        f.b_anim = boucle_animation;
+                        f.charger();
+                        f.ShowDialog();
+                        if (f.valide)
+                        {
+                            this.vitesse_animation = f.v_anim;
+                            this.boucle_animation = f.b_anim;
+                        }
+                    }
+                }
+           // }
         }
 
   
@@ -60,6 +121,8 @@ namespace Tacton
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
+            if (e.Button == MouseButtons.Right)
+                return;
             Tactons t = this.ens.getByMouse(e.X, e.Y);
             //MessageBox.Show(e.X.ToString() + ", " + e.Y.ToString());
             if (t != null)
@@ -174,6 +237,7 @@ namespace Tacton
 
                 try
                 {
+                    ens.vider();
                     this.ens.chargerDynamiqueDepuisFichier(openFileDialog1.FileName, this);
                 }
                 catch (Exception ex)
@@ -181,7 +245,7 @@ namespace Tacton
                     MessageBox.Show("Impossible de charger l'animation :\n" + ex.Message);
                     return;
                 }
-                ens.vider();
+                
                 enableOpen();
             }
         }
@@ -297,6 +361,14 @@ namespace Tacton
             }
             if (changement)
                 this.ens.repaint();
+        }
+
+        private void Form1_DoubleClick(object sender, EventArgs e)
+        {
+            
+            contextMenuStrip1.Show();
+            contextMenuStrip1.Left = Cursor.Position.X;
+            contextMenuStrip1.Top = Cursor.Position.Y;
         }
 
     }
