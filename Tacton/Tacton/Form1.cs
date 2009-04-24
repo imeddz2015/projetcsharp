@@ -20,7 +20,8 @@ namespace Tacton
         public Brush deftacton_off = Brushes.Beige; //couleur du tacton en position off
         public Brush deftacton_on = Brushes.BlueViolet;
 
-        public int vitesse_animation=100, boucle_animation=1;
+        public int vitesse_animation=0;
+        public int boucle_animation=1;
 
         public bool clicked;
         
