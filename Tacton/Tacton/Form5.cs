@@ -78,7 +78,12 @@ namespace Tacton
                 this.Width = 120;
              */
             afficher(temp);
-            tim.Interval = Convert.ToInt32( Math.Round(1000.0 * Convert.ToDouble(temp.temps) * Convert.ToDouble(e.unite_temps) * (Convert.ToDouble(this.f.vitesse_animation) / 100.0)));
+            //tim.Interval = Convert.ToInt32( Math.Round(1000.0 * Convert.ToDouble(temp.temps) * Convert.ToDouble(e.unite_temps) * (Convert.ToDouble(this.f.vitesse_animation) / 100.0)));
+            if (this.f.vitesse_animation == 0)
+                tim.Interval = Convert.ToInt32(Math.Round(1000.0 * Convert.ToDouble(temp.temps) * Convert.ToDouble(e.unite_temps)));
+            else
+                tim.Interval = Convert.ToInt32(Math.Round((this.f.vitesse_animation * 1000.0) / (this.f.ens.items.Count)));
+                    
             tim.Enabled=true;
             
         }
@@ -111,7 +116,14 @@ namespace Tacton
             if (pos < this.f.ens.items.Count)
             {
                 afficher(this.f.ens.items[this.pos]);
-                tim.Interval = Convert.ToInt32(Math.Round(1000.0 * Convert.ToDouble(this.f.ens.items[this.pos++].temps) * Convert.ToDouble(this.e.unite_temps) * (Convert.ToDouble(this.f.vitesse_animation) / 100.0)));
+                //tim.Interval = Convert.ToInt32(Math.Round(1000.0 * Convert.ToDouble(this.f.ens.items[this.pos++].temps) * Convert.ToDouble(this.e.unite_temps) * (Convert.ToDouble(this.f.vitesse_animation) / 100.0)));
+                if (this.f.vitesse_animation == 0)
+                    tim.Interval = Convert.ToInt32(Math.Round(1000.0 * Convert.ToDouble(this.f.ens.items[this.pos++].temps) * Convert.ToDouble(this.e.unite_temps)));
+                else 
+                {
+                    tim.Interval = Convert.ToInt32(Math.Round((this.f.vitesse_animation*1000.0)/(this.f.ens.items.Count)));
+                    pos++;
+                }
                 tim.Enabled = true;
             }
             else
