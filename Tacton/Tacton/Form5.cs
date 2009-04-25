@@ -61,7 +61,7 @@ namespace Tacton
         }
         public void Affichage()
         {
-            this.infini = this.f.vitesse_animation == 0;
+            this.infini = this.f.boucle_animation == 0;
            
             this.e.xd = 2; this.e.yd = 2;
             this.e.unite_temps=this.f.ens.unite_temps;
@@ -118,7 +118,7 @@ namespace Tacton
                 afficher(this.f.ens.items[this.pos]);
                 //tim.Interval = Convert.ToInt32(Math.Round(1000.0 * Convert.ToDouble(this.f.ens.items[this.pos++].temps) * Convert.ToDouble(this.e.unite_temps) * (Convert.ToDouble(this.f.vitesse_animation) / 100.0)));
                 if (this.f.vitesse_animation == 0)
-                    tim.Interval = Convert.ToInt32(Math.Round(1000.0 * Convert.ToDouble(this.f.ens.items[this.pos++].temps) * Convert.ToDouble(this.e.unite_temps)));
+                    tim.Interval = Convert.ToInt32(Math.Round(1000.0 * Convert.ToDouble(this.f.ens.items[pos++].temps) * Convert.ToDouble(this.e.unite_temps)));
                 else 
                 {
                     tim.Interval = Convert.ToInt32(Math.Round((this.f.vitesse_animation*1000.0)/(this.f.ens.items.Count)));

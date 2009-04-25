@@ -46,3 +46,5 @@ D:\Projet c#\Tacton\Tacton\obj\Debug\Tacton.Form3.resources
 D:\Projet c#\Tacton\Tacton\obj\Debug\Tacton.tsize.resources
 D:\Projet c#\Tacton\Tacton\obj\Debug\Tacton.Form4.resources
 D:\Projet c#\Tacton\Tacton\obj\Debug\Tacton.Form5.resources
+C:\Documents and Settings\Myster coco\Mes documents\projet2\Tacton\Tacton\obj\Debug\Tacton.Form4.resources
+C:\Documents and Settings\Myster coco\Mes documents\projet2\Tacton\Tacton\obj\Debug\Tacton.Form5.resources
