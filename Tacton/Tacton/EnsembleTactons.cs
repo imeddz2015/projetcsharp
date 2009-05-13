@@ -13,19 +13,14 @@ namespace Tacton
         public int xfree;// = xd - marge;
         public int yfree;// = yd;
         public int heighmax = 0;
-
-
         public int unite_temps=1;
         Form f;
-
         public List<Tactons> items=new List<Tactons>();
-
         public EnsembleTactons()
         {
             this.xfree = xd - marge;
             this.yfree = yd;
         }
-
         public void ajouter(Tactons t)
         {
             if (t == null)
@@ -47,7 +42,6 @@ namespace Tacton
             this.items.Add(t);
             t.repaint();
         }
-
         public void replacer()
         {
             xfree = xd - marge;
@@ -70,7 +64,6 @@ namespace Tacton
               
             }
         }
-
         public void effacer(Tactons t)
         {
             t.effacer();
@@ -91,7 +84,6 @@ namespace Tacton
             foreach (Tactons t in this.items)
                 t.repaint();
         }
-
         public void setTactonSize(int taille)
         {
             foreach (Tactons t in this.items)
@@ -103,7 +95,6 @@ namespace Tacton
                 }
             this.replacer();
         }
-
         public void vider()
         {
             foreach (Tactons t in this.items)
@@ -111,7 +102,6 @@ namespace Tacton
             this.items = new List<Tactons>();
             this.replacer();
         }
-
         public void chargerDynamiqueDepuisFichier(string fic, Form f)
         {
             Xml x = new Xml();
@@ -143,8 +133,6 @@ namespace Tacton
                 this.ajouter(ta);
             }
         }
-
-
         public void sauveDynamiqueDansFichier(string fichier)
         { //sauve le binaire dans le fichier xml
             Xml x = new Xml();
@@ -152,7 +140,6 @@ namespace Tacton
             x.writeDyanique(this.sauveDynamique());
             x.free();
         }
-
         public string sauveDynamique()
         { //renvoie un binaire
             Tactons t = this.items[0];
