@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TactonDynamique auteur="Dede" date="13/05/2009 16:47:08" nbligne="3" nbcolonne="2" nbImages="3" uniteTemps="1">
+  <Image numero="1">
+    <Duree> 1 </Duree>
+    <Motif>
+      <Ligne numero="1">
+        <Colonne numero="1">1</Colonne>
+        <Colonne numero="2">0</Colonne>
+      </Ligne>
+      <Ligne numero="2">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+      </Ligne>
+      <Ligne numero="3">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+      </Ligne>
+    </Motif>
+  </Image>
+  <Image numero="2">
+    <Duree> 1 </Duree>
+    <Motif>
+      <Ligne numero="1">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+      </Ligne>
+      <Ligne numero="2">
+        <Colonne numero="1">1</Colonne>
+        <Colonne numero="2">1</Colonne>
+      </Ligne>
+      <Ligne numero="3">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+      </Ligne>
+    </Motif>
+  </Image>
+  <Image numero="3">
+    <Duree> 1 </Duree>
+    <Motif>
+      <Ligne numero="1">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+      </Ligne>
+      <Ligne numero="2">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+      </Ligne>
+      <Ligne numero="3">
+        <Colonne numero="1">1</Colonne>
+        <Colonne numero="2">1</Colonne>
+      </Ligne>
+    </Motif>
+  </Image>
+</TactonDynamique>
