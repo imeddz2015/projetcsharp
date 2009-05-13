@@ -31,8 +31,8 @@ namespace Tacton
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.nbc = Convert.ToInt32(this.nbcb.Text);
-            this.nbl = Convert.ToInt32(this.nblb.Text);
+            this.nbl = Convert.ToInt32(this.nbcb.Text);
+            this.nbc = Convert.ToInt32(this.nblb.Text);
             if (nbc > 0 && nbl > 0)
             {
                 this.valide = true;
