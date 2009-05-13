@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TactonDynamique auteur="Dede" date="13/05/2009 11:32:03" nbligne="6" nbcolonne="5" nbImages="4" uniteTemps="1">
+  <Image numero="1">
+    <Duree> 1 </Duree>
+    <Motif>
+      <Ligne numero="1">
+        <Colonne numero="1">1</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+      <Ligne numero="2">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">1</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+      <Ligne numero="3">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+      <Ligne numero="4">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+      <Ligne numero="5">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+      <Ligne numero="6">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">1</Colonne>
+      </Ligne>
+    </Motif>
+  </Image>
+  <Image numero="2">
+    <Duree> 1 </Duree>
+    <Motif>
+      <Ligne numero="1">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+      <Ligne numero="2">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+      <Ligne numero="3">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+      <Ligne numero="4">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+      <Ligne numero="5">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+      <Ligne numero="6">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+    </Motif>
+  </Image>
+  <Image numero="3">
+    <Duree> 1 </Duree>
+    <Motif>
+      <Ligne numero="1">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+      <Ligne numero="2">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+      <Ligne numero="3">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+      <Ligne numero="4">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+      <Ligne numero="5">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+      <Ligne numero="6">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+    </Motif>
+  </Image>
+  <Image numero="4">
+    <Duree> 1 </Duree>
+    <Motif>
+      <Ligne numero="1">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+      <Ligne numero="2">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+      <Ligne numero="3">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+      <Ligne numero="4">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+      <Ligne numero="5">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+      <Ligne numero="6">
+        <Colonne numero="1">0</Colonne>
+        <Colonne numero="2">0</Colonne>
+        <Colonne numero="3">0</Colonne>
+        <Colonne numero="4">0</Colonne>
+        <Colonne numero="5">0</Colonne>
+      </Ligne>
+    </Motif>
+  </Image>
+</TactonDynamique>
