@@ -48,3 +48,16 @@ D:\Projet c#\Tacton\Tacton\obj\Debug\Tacton.Form4.resources
 D:\Projet c#\Tacton\Tacton\obj\Debug\Tacton.Form5.resources
 C:\Documents and Settings\Myster coco\Mes documents\projet2\Tacton\Tacton\obj\Debug\Tacton.Form4.resources
 C:\Documents and Settings\Myster coco\Mes documents\projet2\Tacton\Tacton\obj\Debug\Tacton.Form5.resources
+D:\M1\C#\projet\Tacton\Tacton\bin\Debug\Tacton.exe
+D:\M1\C#\projet\Tacton\Tacton\bin\Debug\Tacton.pdb
+D:\M1\C#\projet\Tacton\Tacton\obj\Debug\ResolveAssemblyReference.cache
+D:\M1\C#\projet\Tacton\Tacton\obj\Debug\Tacton.Form1.resources
+D:\M1\C#\projet\Tacton\Tacton\obj\Debug\Tacton.Fduree.resources
+D:\M1\C#\projet\Tacton\Tacton\obj\Debug\Tacton.Form3.resources
+D:\M1\C#\projet\Tacton\Tacton\obj\Debug\Tacton.Form4.resources
+D:\M1\C#\projet\Tacton\Tacton\obj\Debug\Tacton.Form5.resources
+D:\M1\C#\projet\Tacton\Tacton\obj\Debug\Tacton.Properties.Resources.resources
+D:\M1\C#\projet\Tacton\Tacton\obj\Debug\Tacton.tsize.resources
+D:\M1\C#\projet\Tacton\Tacton\obj\Debug\Tacton.csproj.GenerateResource.Cache
+D:\M1\C#\projet\Tacton\Tacton\obj\Debug\Tacton.exe
+D:\M1\C#\projet\Tacton\Tacton\obj\Debug\Tacton.pdb
