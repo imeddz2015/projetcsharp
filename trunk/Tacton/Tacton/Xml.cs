@@ -93,16 +93,26 @@ namespace Tacton
             XmlAttributeCollection attributeCollection = racine.Attributes;
             string auteur = attributeCollection[0].Value;
             string date = attributeCollection[1].Value;
-            //int tailleMatrice = Convert.ToInt32(attributeCollection[2].Value);
-            int nbl = Convert.ToInt32(attributeCollection[2].Value);
-            int nbc = Convert.ToInt32(attributeCollection[3].Value);
+            int tailleMatriceLigne = Convert.ToInt32(attributeCollection[2].Value);
+            int tailleMatriceColonne = Convert.ToInt32(attributeCollection[3].Value);
             int nombreTacton = Convert.ToInt32(attributeCollection[4].Value);
             double uniteTemps = Convert.ToDouble(attributeCollection[5].Value);
-            retour += nbl.ToString()+"#"+ nbc.ToString() + "#" + nombreTacton.ToString() + "#" + uniteTemps.ToString() + "#";
-            string text = racine.InnerText.ToString();
-            Console.WriteLine(text);
-            int pos = text.LastIndexOf("\r\n");
-            return retour+text.Substring(pos+5, text.Length - (pos+5));
+            retour += tailleMatriceLigne.ToString() + "#" + tailleMatriceColonne.ToString() + "#" + nombreTacton.ToString() + "#" + uniteTemps.ToString() + "#";
+
+            XmlNodeList nodeList = node.SelectNodes("/TactonDynamique/Image");
+            bool firstOne = true;
+            foreach (XmlNode nod in nodeList)
+            {
+                if (firstOne)
+                {
+                    firstOne = false;
+                    retour += nod.SelectSingleNode("Duree").InnerText.Substring(1, nod.SelectSingleNode("Duree").InnerText.Length - 1);
+                }
+                else
+                    retour += nod.SelectSingleNode("Duree").InnerText;
+                retour += nod.SelectSingleNode("Motif").InnerText;
+            }
+            return retour;
         } // taille matrice, nombre tacton, unite de temps
 
         public void writeDyanique(string tacton)
