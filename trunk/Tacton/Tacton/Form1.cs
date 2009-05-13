@@ -19,12 +19,9 @@ namespace Tacton
         public Brush defbordure = Brushes.White; // couleur de la bordure de la matrice
         public Brush deftacton_off = Brushes.Beige; //couleur du tacton en position off
         public Brush deftacton_on = Brushes.BlueViolet;
-
         public int vitesse_animation=0;
         public int boucle_animation=1;
-
         public bool clicked;
-        
 
         public void MajStatus(object sender, MonEventArgs arg)
         {
@@ -89,17 +86,6 @@ namespace Tacton
            // }
         }
 
-  
-
- 
-
- 
-
-
-        
-
-
-
         //OK OK
 
         public Form1()
@@ -109,17 +95,14 @@ namespace Tacton
             lr = new LRClickManager(this);
             lr += new LRMouseDownEventHandler(MajStatus);
         }
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Environment.Exit(-1);
         }
-
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             this.ens.repaint();
         }
-
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -136,7 +119,6 @@ namespace Tacton
                     t.setOn(p);
             }
         }
-
         private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
         {  
             //Console.WriteLine(this.MousePosition.ToString());
@@ -147,13 +129,11 @@ namespace Tacton
                 this.ens.replacer();
             }
         }
-
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
             this.MousePosition.X = e.X;
             this.MousePosition.Y = e.Y;
         }
-
         private void ajusterLeTempsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Tactons t = this.ens.getByMouse(this.MousePosition.X,this.MousePosition.Y);
@@ -175,32 +155,27 @@ namespace Tacton
                 }
             }
         }
-
         private void repeindreToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.ens.repaint();
         }
-
         private void ajouterTactonToolStripMenuItem_Click(object sender, EventArgs e)
         {
            Tactons t = new Tactons(this, this.defx, this.defy,this.deftactonsize);
            ens.ajouter(t);
         }
-
         public void enableOpen()
         {
             editionToolStripMenuItem.Enabled = true;
             affichageToolStripMenuItem.Enabled = true;
             toolStripMenuItem2.Enabled = true;
         }
-
         public void disableOpen()
         {
             editionToolStripMenuItem.Enabled = false;
             affichageToolStripMenuItem.Enabled = false;
             toolStripMenuItem2.Enabled = false; //enregistrer
         }
-
         private void chargerUnTactonToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -219,16 +194,16 @@ namespace Tacton
                     return;
                 }
                 ens.vider();
+                this.defx = t.x;
+                this.defy = t.y;
                 this.ens.ajouter(t);
                 enableOpen();
             }
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             disableOpen();
         }
-
         private void chargerUneanimationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openFileDialog1.FileName = "";
@@ -240,6 +215,8 @@ namespace Tacton
                 {
                     ens.vider();
                     this.ens.chargerDynamiqueDepuisFichier(openFileDialog1.FileName, this);
+                    this.defx = this.ens.items[0].x;
+                    this.defy = this.ens.items[0].y;
                 }
                 catch (Exception ex)
                 {
@@ -250,7 +227,6 @@ namespace Tacton
                 enableOpen();
             }
         }
-
         private void nouveauTactonToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -270,13 +246,11 @@ namespace Tacton
                 ens.repaint();
             }
         }
-
         private void fermerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ens.vider();
             disableOpen();
         }
-
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
             if (ens.items.Count == 0)
@@ -306,12 +280,10 @@ namespace Tacton
                     }
             }
         }
-
         private void menuStrip1_Paint(object sender, PaintEventArgs e)
         {
             this.ens.repaint();
         }
-
         private void parametresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             /*public int deftactonsize = 20;
@@ -363,7 +335,6 @@ namespace Tacton
             if (changement)
                 this.ens.repaint();
         }
-
         private void Form1_DoubleClick(object sender, EventArgs e)
         {
             
@@ -371,6 +342,5 @@ namespace Tacton
             contextMenuStrip1.Left = Cursor.Position.X;
             contextMenuStrip1.Top = Cursor.Position.Y;
         }
-
     }
 }

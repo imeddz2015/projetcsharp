@@ -40,7 +40,6 @@ namespace Tacton
         { //constructeur sans marge
             this.buildTactons(p, x, y, tsize, 0, 0);
         }
-
         public void deplace(int x, int y)
         {
             //efface le vieu
@@ -51,12 +50,10 @@ namespace Tacton
             //construit le nouveau
             this.repaint();
         }
-
         public void effacer()
         {
             this.getGraphics().FillRectangle((new Pen(this.p.BackColor)).Brush, posx, posy, width + 2, height + 2);
         }
-
         public void setOn(int pos)
         { //allume un tacton avec une position absolue
             int y = pos / this.x;
@@ -109,13 +106,11 @@ namespace Tacton
             
             return p;
         }
-
         public bool isIn(int sx, int sy)
         {
             Point p = getCoordonnee(sx, sy);
             return p.X >= 0 && p.Y >= 0 && p.X < this.x && p.Y < this.y;
         }
-
         public void chargerMatriceDepuisFichier(string mat)
         { //charge la matrice a partir d'une séquence
             Xml x = new Xml();
@@ -150,8 +145,6 @@ namespace Tacton
             //this.height = this.y * tsize + marge * this.y + marge;
             this.calculSize();
         }
-
-
         public void sauverMatriceDansUnFichier(string fichier)
         { //sauve la matrice dans le fichier en parametre
             Xml x = new Xml();
@@ -161,7 +154,6 @@ namespace Tacton
             x.writeStatic(bin);
             x.free();
         }
-
         public string sauverMatrice()
         { //renvoie le binaire statique
             string ret = "";
@@ -174,9 +166,6 @@ namespace Tacton
             }
             return ret.Substring(0, ret.Length - 1);
         }
-
-
-
         public bool isOn(int x, int y)
         {
             if (x < 0 || y < 0 || x >= this.x || y >= this.y)
@@ -187,7 +176,6 @@ namespace Tacton
         {
             return isOn(p.X, p.Y);
         }
-
         public void repaint()
         { //repaind les tactons en fonction de la matrice de sauvegarde
             //pourtour
@@ -225,7 +213,6 @@ namespace Tacton
             this.width = x * tsize + marge * x + marge;
             this.height = y * tsize + marge * y + marge;
         }
-
         private void buildTactons(Form f, int x, int y, int tsize, int posx, int posy)
         { // extension du constructeur, on assigne les variables par défaut et on construit notre classe
             //
@@ -261,6 +248,5 @@ namespace Tacton
         {
             return "OK ok reste cool";
         }
-
     }
 }
