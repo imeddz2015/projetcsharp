@@ -64,13 +64,13 @@ namespace Tacton
             racine.Attributes.Append(nbcolonne);
 
             XmlNode motif = docxml.CreateElement("Motif");
-            for (int i = 1; i <nbc+1 ; i++)
+            for (int i = 1; i <nbl+1 ; i++)
             {
                 XmlNode ligne = docxml.CreateElement("Ligne");
                 XmlAttribute numeroLigne = docxml.CreateAttribute("numero");
                 numeroLigne.Value = i.ToString();
                 ligne.Attributes.Append(numeroLigne);
-                for(int j = 1;j<nbl+1;j++)
+                for(int j = 1;j<nbc+1;j++)
                 {
                     XmlNode colonne = docxml.CreateElement("Colonne");
                     XmlAttribute numeroColonne = docxml.CreateAttribute("numero");
@@ -168,7 +168,7 @@ namespace Tacton
                         XmlAttribute numeroColonne = docxml.CreateAttribute("numero");
                         numeroColonne.Value = (k + 1).ToString();
                         nodeColonne.Attributes.Append(numeroColonne);
-                        int tmp = (j * 4) + k;
+                        int tmp = (j * nbColonne) + k;
                         nodeColonne.InnerText= detailsImage[(i*2)+1].Substring(tmp, 1);
                         nodeLigne.AppendChild(nodeColonne);
                     }

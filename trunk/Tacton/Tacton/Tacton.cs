@@ -165,10 +165,10 @@ namespace Tacton
         { //renvoie le binaire statique
             string ret = "";
             int i, j;
-            for (i = 0; i < this.x; i++)
+            for (i = 0; i < this.y; i++)
             {
-                for (j = 0; j < this.y; j++)
-                    ret += this.matrice[i, j] ? "1" : "0";
+                for (j = 0; j < this.x; j++)
+                    ret += this.matrice[j, i] ? "1" : "0";
                 ret += ',';
             }
             return ret.Substring(0, ret.Length - 1);

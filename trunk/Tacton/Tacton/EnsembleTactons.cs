@@ -137,7 +137,7 @@ namespace Tacton
             for (i = 0; i < ens.Length; i = i + 2)
             {
                 //int taille=Convert.ToInt32(Math.Sqrt(ens[i+1].Length));
-                Tactons ta = new Tactons(this.f, nbc, nbl, 20);
+                Tactons ta = new Tactons(this.f, nbl, nbc, 20);
                 ta.temps = Convert.ToInt32(ens[i]);
                 ta.chargerMatrice(ens[i + 1]);
                 this.ajouter(ta);
