@@ -142,7 +142,7 @@ namespace Tacton
             int i, j;
             for (i = 0; i < this.x; i++)
                 for (j = 0; j < this.y; j++)
-                    if (s[(i*this.y) + j] == '1')
+                    if (s[(j*this.x) + i] == '1')
                         this.matrice[i, j] = true;
                     else
                         this.matrice[i, j] = false;
@@ -150,6 +150,7 @@ namespace Tacton
             //this.height = this.y * tsize + marge * this.y + marge;
             this.calculSize();
         }
+
 
         public void sauverMatriceDansUnFichier(string fichier)
         { //sauve la matrice dans le fichier en parametre
@@ -212,10 +213,12 @@ namespace Tacton
             int i, j;
             for (i = 0; i < this.x; i++)
                 for (j = 0; j < this.y; j++)
+                {
                     if (this.matrice[i, j])
                         this.setOn(i, j);
                     else
                         this.setOff(i, j);
+                }
         }
         public void calculSize()
         {

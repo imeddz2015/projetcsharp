@@ -126,8 +126,8 @@ namespace Tacton
         {
             //MessageBox.Show(bin);
             string[] t = bin.Split('#');
-            int nbl=Convert.ToInt32(t[0]);
-            int nbc=Convert.ToInt32(t[1]);
+            int nbc=Convert.ToInt32(t[0]);
+            int nbl=Convert.ToInt32(t[1]);
             this.unite_temps = Convert.ToInt32(t[3]);
             string val=t[4];
             string[] ens = val.Split(' ');
@@ -143,6 +143,7 @@ namespace Tacton
                 this.ajouter(ta);
             }
         }
+
 
         public void sauveDynamiqueDansFichier(string fichier)
         { //sauve le binaire dans le fichier xml
