@@ -197,6 +197,7 @@ namespace Tacton
                 this.defx = t.x;
                 this.defy = t.y;
                 this.ens.ajouter(t);
+                this.deftactonsize = 20;
                 enableOpen();
             }
         }
@@ -217,6 +218,7 @@ namespace Tacton
                     this.ens.chargerDynamiqueDepuisFichier(openFileDialog1.FileName, this);
                     this.defx = this.ens.items[0].x;
                     this.defy = this.ens.items[0].y;
+                    this.deftactonsize = 20;
                 }
                 catch (Exception ex)
                 {
