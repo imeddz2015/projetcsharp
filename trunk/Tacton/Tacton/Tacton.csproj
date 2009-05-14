@@ -37,68 +37,68 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EnsembleTactons.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FenetrePrincipale.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FenetrePrincipale.Designer.cs">
+      <DependentUpon>FenetrePrincipale.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="ParametreDuree.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="ParametreDuree.Designer.cs">
+      <DependentUpon>ParametreDuree.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="ParametreTacton.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="ParametreTacton.Designer.cs">
+      <DependentUpon>ParametreTacton.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4.cs">
+    <Compile Include="ParametreAnimation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="ParametreAnimation.Designer.cs">
+      <DependentUpon>ParametreAnimation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
+    <Compile Include="Animation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5.Designer.cs">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <Compile Include="Animation.Designer.cs">
+      <DependentUpon>Animation.cs</DependentUpon>
     </Compile>
     <Compile Include="LRClickManager.cs" />
     <Compile Include="MonEventArgs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FenetrePrincipale.resx">
+      <DependentUpon>FenetrePrincipale.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
+    <EmbeddedResource Include="ParametreDuree.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>Form2.cs</DependentUpon>
+      <DependentUpon>ParametreDuree.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
+    <EmbeddedResource Include="ParametreTacton.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>Form3.cs</DependentUpon>
+      <DependentUpon>ParametreTacton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4.resx">
+    <EmbeddedResource Include="ParametreAnimation.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>Form4.cs</DependentUpon>
+      <DependentUpon>ParametreAnimation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5.resx">
+    <EmbeddedResource Include="Animation.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>Form5.cs</DependentUpon>
+      <DependentUpon>Animation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="tsize.resx">
+    <EmbeddedResource Include="ParametreMatrice.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>tsize.cs</DependentUpon>
+      <DependentUpon>ParametreMatrice.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -114,11 +114,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Tacton.cs" />
-    <Compile Include="tsize.cs">
+    <Compile Include="ParametreMatrice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="tsize.Designer.cs">
-      <DependentUpon>tsize.cs</DependentUpon>
+    <Compile Include="ParametreMatrice.Designer.cs">
+      <DependentUpon>ParametreMatrice.cs</DependentUpon>
     </Compile>
     <Compile Include="Xml.cs" />
   </ItemGroup>

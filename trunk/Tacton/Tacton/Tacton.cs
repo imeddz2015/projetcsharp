@@ -179,16 +179,16 @@ namespace Tacton
         public void repaint()
         { //repaind les tactons en fonction de la matrice de sauvegarde
             //pourtour
-            if (this.p is Form1)
+            if (this.p is FenetrePrincipale)
             {
-                Form1 f = this.p as Form1;
+                FenetrePrincipale f = this.p as FenetrePrincipale;
                 this.tacton_off = f.deftacton_off;
                 this.tacton_on = f.deftacton_on;
                 this.bordure = f.defbordure;
             }
             else
             {
-                Form5 f = this.p as Form5;
+                Animation f = this.p as Animation;
                 this.tacton_off = f.deftacton_off;
                 this.tacton_on = f.deftacton_on;
                 this.bordure = f.defbordure;
