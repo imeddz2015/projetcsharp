@@ -44,7 +44,7 @@
             this.tactal.Location = new System.Drawing.Point(73, 69);
             this.tactal.Name = "tactal";
             this.tactal.ReadOnly = true;
-            this.tactal.Size = new System.Drawing.Size(111, 24);
+            this.tactal.Size = new System.Drawing.Size(111, 22);
             this.tactal.TabIndex = 1;
             this.tactal.Text = "Tacton allumé";
             this.tactal.Click += new System.EventHandler(this.textBox1_Click);
@@ -55,7 +55,7 @@
             this.tactb.Location = new System.Drawing.Point(73, 17);
             this.tactb.Name = "tactb";
             this.tactb.ReadOnly = true;
-            this.tactb.Size = new System.Drawing.Size(111, 24);
+            this.tactb.Size = new System.Drawing.Size(111, 22);
             this.tactb.TabIndex = 2;
             this.tactb.Text = "Bordure";
             this.tactb.Click += new System.EventHandler(this.textBox1_Click);
@@ -66,9 +66,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(48, 104);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 18);
+            this.label1.Size = new System.Drawing.Size(127, 16);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Taille d\'un clou :";
+            this.label1.Text = "Taille d\'un picot :";
             // 
             // taille
             // 
@@ -104,7 +104,7 @@
             this.tactet.Location = new System.Drawing.Point(73, 41);
             this.tactet.Name = "tactet";
             this.tactet.ReadOnly = true;
-            this.tactet.Size = new System.Drawing.Size(111, 24);
+            this.tactet.Size = new System.Drawing.Size(111, 22);
             this.tactet.TabIndex = 7;
             this.tactet.Text = "Tacton éteint";
             this.tactet.Click += new System.EventHandler(this.textBox1_Click);
