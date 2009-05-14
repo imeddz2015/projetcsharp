@@ -42,9 +42,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(16, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 18);
+            this.label1.Size = new System.Drawing.Size(162, 18);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Vitesse de l\'animation";
+            this.label1.Text = "Durée de l\'animation";
             // 
             // label2
             // 
@@ -72,18 +72,17 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(40, 120);
+            this.button2.Location = new System.Drawing.Point(48, 120);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
             this.button2.Text = "Valider";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(120, 120);
+            this.button1.Location = new System.Drawing.Point(160, 120);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
@@ -91,7 +90,7 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form4
+            // ParametreAnimation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -102,8 +101,8 @@
             this.Controls.Add(this.vitesse_anim);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form4";
-            this.Text = "Paramètre de l\'animation";
+            this.Name = "ParametreAnimation";
+            this.Text = "Paramètre Animation";
             this.ResumeLayout(false);
             this.PerformLayout();
 
