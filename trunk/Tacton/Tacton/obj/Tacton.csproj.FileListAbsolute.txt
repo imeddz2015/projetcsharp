@@ -3,7 +3,6 @@ G:\Projet C#\Tacton\Tacton\obj\Debug\Tacton.pdb
 G:\Projet C#\Tacton\Tacton\bin\Debug\Tacton.exe
 G:\Projet C#\Tacton\Tacton\bin\Debug\Tacton.pdb
 G:\Projet C#\Tacton\Tacton\obj\Debug\ResolveAssemblyReference.cache
-G:\Projet C#\Tacton\Tacton\obj\Debug\Tacton.Form1.resources
 G:\Projet C#\Tacton\Tacton\obj\Debug\Tacton.Properties.Resources.resources
 G:\Projet C#\Tacton\Tacton\obj\Debug\Tacton.csproj.GenerateResource.Cache
 D:\Projet c#\Tacton\Tacton\bin\Debug\Tacton.exe
@@ -61,3 +60,9 @@ D:\Projet c#\Tacton\Tacton\obj\Debug\Tacton.ParametreTacton.resources
 D:\Projet c#\Tacton\Tacton\obj\Debug\Tacton.ParametreAnimation.resources
 D:\Projet c#\Tacton\Tacton\obj\Debug\Tacton.Animation.resources
 D:\Projet c#\Tacton\Tacton\obj\Debug\Tacton.ParametreMatrice.resources
+G:\Projet C#\Tacton\Tacton\obj\Debug\Tacton.FenetrePrincipale.resources
+G:\Projet C#\Tacton\Tacton\obj\Debug\Tacton.Fduree.resources
+G:\Projet C#\Tacton\Tacton\obj\Debug\Tacton.ParametreTacton.resources
+G:\Projet C#\Tacton\Tacton\obj\Debug\Tacton.ParametreAnimation.resources
+G:\Projet C#\Tacton\Tacton\obj\Debug\Tacton.Animation.resources
+G:\Projet C#\Tacton\Tacton\obj\Debug\Tacton.ParametreMatrice.resources
