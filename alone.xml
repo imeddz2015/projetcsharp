@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TactonStatique auteur="Dupire" date="13/05/2009 16:45:27" nbligne="3" nbcolonne="2">
+<TactonStatique auteur="Dupire" date="14/05/2009 15:04:10" nbligne="3" nbcolonne="2">
   <Motif>
     <Ligne numero="1">
-      <Colonne numero="1">1</Colonne>
+      <Colonne numero="1">0</Colonne>
       <Colonne numero="2">1</Colonne>
     </Ligne>
     <Ligne numero="2">
-      <Colonne numero="1">0</Colonne>
+      <Colonne numero="1">1</Colonne>
       <Colonne numero="2">0</Colonne>
     </Ligne>
     <Ligne numero="3">
       <Colonne numero="1">0</Colonne>
-      <Colonne numero="2">0</Colonne>
+      <Colonne numero="2">1</Colonne>
     </Ligne>
   </Motif>
 </TactonStatique>
