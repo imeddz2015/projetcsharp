@@ -41,14 +41,5 @@ namespace Tacton
         {
             this.Close();
         }
-
-
-
-
-
-
-
- 
-
     }
 }
