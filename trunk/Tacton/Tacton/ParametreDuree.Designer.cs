@@ -42,7 +42,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 36);
+            this.label1.Size = new System.Drawing.Size(255, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "Indiquez le temps d\'affichage\r\ndu tacton :";
             // 
@@ -59,7 +59,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(32, 150);
+            this.button1.Location = new System.Drawing.Point(40, 152);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
@@ -73,7 +73,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(2, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(214, 20);
+            this.label2.Size = new System.Drawing.Size(239, 22);
             this.label2.TabIndex = 3;
             this.label2.Text = "Indiquez l\'unité a utiliser :";
             // 
@@ -90,7 +90,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(127, 150);
+            this.button2.Location = new System.Drawing.Point(160, 152);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 5;
@@ -110,7 +110,7 @@
             this.Controls.Add(this.tempsaff);
             this.Controls.Add(this.label1);
             this.Name = "Fduree";
-            this.Text = "Durée du tacton";
+            this.Text = "Paramètre Durée";
             this.ResumeLayout(false);
             this.PerformLayout();
 
