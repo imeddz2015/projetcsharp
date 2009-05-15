@@ -46,6 +46,7 @@ namespace Tacton
             ecart = arg.position_up_x - arg.position_down_x;
             if (ecart < -marge_pixel)
             {
+                /*
                 Console.WriteLine(
                     "désactivation de l'animation\n" +
                     "x:" + arg.position_down_x +
@@ -55,6 +56,7 @@ namespace Tacton
                     " y:" + arg.position_up_y +
                     " t:" + t.TotalMilliseconds
                     );
+                 */
                 tim.Enabled = false;
                 this.Close();
             }

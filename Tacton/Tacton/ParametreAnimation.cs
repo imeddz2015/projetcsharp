@@ -27,6 +27,7 @@ namespace Tacton
 
             if ((ecart > -marge_pixel) && (ecart < -1))
             {
+                /*
                 Console.WriteLine(
                     "masquage des paramètres\n" +
                     "x:" + arg.position_down_x +
@@ -36,6 +37,7 @@ namespace Tacton
                     " y:" + arg.position_up_y +
                     " t:" + t.TotalMilliseconds
                     );
+                 */ 
                 button2_Click(this, null);
             }
             
