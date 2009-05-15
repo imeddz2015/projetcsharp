@@ -39,6 +39,7 @@ namespace Tacton
             //{
                 if (ecart > marge_pixel)
                 {
+                    /*
                     Console.WriteLine(
                         "activation de l'animation\n" +
                         "x:" + arg.position_down_x +
@@ -48,6 +49,7 @@ namespace Tacton
                         " y:" + arg.position_up_y +
                         " t:" + t.TotalMilliseconds
                         );
+                     */ 
                     if (this.ens.items.Count > 0)
                     {
                         Animation f = new Animation();
@@ -60,7 +62,8 @@ namespace Tacton
            // {
                 if ((ecart < marge_pixel) && (ecart > 0))
                 {
-                    Console.WriteLine(
+                    /*
+                     Console.WriteLine(
                         "affichage des paramètres\n" +
                         "x:" + arg.position_down_x +
                         " y:" + arg.position_down_y +
@@ -69,6 +72,7 @@ namespace Tacton
                         " y:" + arg.position_up_y +
                         " t:" + t.TotalMilliseconds
                         );
+                     */
                     if (this.ens.items.Count > 0)
                     {
                         ParametreAnimation f = new ParametreAnimation();
